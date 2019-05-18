@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: mbot.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: mbot.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// init discord lib
+const settings = require('./settings.json');
+const pkg = require('./package.json');
+const commands = require('./commands.js');
+const tools = require('./tools.js');
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const sqlite = require('sqlite3').verbose();
+const express = require('express');
+const fs = require('fs');
+const app = express();
+
+app.use(express.json());
+
+/**
+ * This bots EventEmitter
+ */
+module.exports.event = new tools.Event();
+let event = module.exports.event;
+
+let db = new sqlite.Database('./mbot.db', (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('Connected to bot database');
+});
+
+let uptime = 0;
+
+db.serialize(function () {
+  db.run('CREATE TABLE if not exists users(id TEXT, points INTEGER, UNIQUE(id))');
+});
+
+client.on('guildMemberAdd', (guildMember) => {
+  db.serialize(function () {
+    db.run('INSERT OR IGNORE INTO users(id, points) VALUES(?,?)', guildMember.user.id.toString(), 100);
+    console.log('New user found, registering them to the bot database with ID of ' + guildMember.user.id.toString());
+  });
+});
+
+client.on('guildMemberRemove', (guildMember) => {
+
+});
+
+// actions
+client.on('ready', async () => {
+  event.emit('ready');
+  db.serialize(function () {
+    var u, user;
+    for (u in client.users.array()) {
+      user = client.users.array()[u];
+      db.run('INSERT OR IGNORE INTO users(id, points) VALUES(?,?)', user.id.toString(), 100);
+    }
+  });
+  console.log('mbot v' + pkg.version + " has been enabled.");
+  //game | only allows for default emojis
+  const games = ['Minecraft', 'Murdering Martine the BOT', 'nymnBridge PewDiePie', 'Acrozze a mega gay',
+    'This bot was made by me 😃', 'help me'
+  ];
+  setInterval(function () {
+    const randomStatus = games[Math.floor(Math.random() * games.length)];
+    client.user.setPresence({
+      satus: 'online',
+      game: {
+        name: randomStatus
+      }
+    });
+  }, 60000);
+  if (settings.debug) {
+    try {
+      let link = await client.generateInvite(["ADMINISTRATOR"]);
+      console.log(link);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  /*setInterval(function () {
+    db.serialize(function (err) {
+      var uPoints;
+      db.each("SELECT points points, id id FROM users", function (err, row) {
+        if (err) {
+          console.log(err);
+        }
+        var u, user;
+        for (u in client.users.array()) {
+          user = client.users.array()[u];
+          tools.setPoints((row.points + 10), user.id.toString());
+          return console.log("Set " + user.id.toString() + " to " + row.points);
+        }
+      });
+    });
+  }, 5000);*/
+  //tools.contactAPI(client);
+  event.on('newUser', (user, username, id) => {
+    console.log(`New user: ${username} with discord ID of ${id} added to the API.`);
+  });
+  event.on('deleteUser', (user, username, id) => {
+    console.log(`User ${username}:${id} has left the server, removing them from the API.`);
+  });
+});
+
+setInterval(function () {
+  uptime++;
+  event.emit('uptimeUp');
+}, 1000);
+
+/**
+ * Get the bots uptime (in seconds)
+ * @returns {number}
+ */
+module.exports.getUptime = function () {
+  return uptime;
+}
+
+event.on('filesLoaded', function () {
+  console.log('Command files loaded!');
+});
+
+event.on('pointsUpdated', function (amnt, id) {
+  console.log(`Set ${id}'s points to ${amnt}!`);
+});
+
+commands.registerCommands(client, this);
+
+app.get('/suggestions', (req, res) => {
+  fs.createReadStream('./suggestions.json', 'utf8').on('data', (chunk) => {
+    let suggestions = JSON.parse(chunk);
+    res.send(suggestions);
+  });
+});
+
+//app.listen(80);
+//login to the client
+client.login(settings.token);</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Event.html">Event</a></li><li><a href="File.html">File</a></li><li><a href="Tools.html">Tools</a></li></ul><h3>Global</h3><ul><li><a href="global.html#adminCommands">adminCommands</a></li><li><a href="global.html#event">event</a></li><li><a href="global.html#getUptime">getUptime</a></li><li><a href="global.html#registerCommands">registerCommands</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Fri May 17 2019 20:17:59 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
