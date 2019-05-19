@@ -1,6 +1,6 @@
 {
     "prefix": "!",
     "token": "YOURTOKEN",
-    "debug": true,
+    "debug": false,
     "memory": 50
 }
