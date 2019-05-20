@@ -2,5 +2,6 @@
     "prefix": "!",
     "token": "YOURTOKEN",
     "debug": false,
+    "fileLogging": true,
     "memory": 50
 }
