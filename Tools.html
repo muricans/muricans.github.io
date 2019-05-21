@@ -484,7 +484,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line199">line 199</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line212">line 212</a>
     </li></ul></dd>
     
 
@@ -877,7 +877,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line380">line 380</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line393">line 393</a>
     </li></ul></dd>
     
 
@@ -909,6 +909,145 @@ const tools = new tls.Tools();</code></pre>
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>tools.find('aww', 'cute dogs', 'day', message, true);</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getImage"><span class="type-signature">(async) </span>getImage<span class="signature">(message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get a random imgur image
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Discord.Message</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The message to respond to.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>Most of the imgur links it sends are dead links, it's very unreliable.</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line152">line 152</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1317,7 +1456,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line328">line 328</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line341">line 341</a>
     </li></ul></dd>
     
 
@@ -1505,7 +1644,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line164">line 164</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line177">line 177</a>
     </li></ul></dd>
     
 
@@ -1718,7 +1857,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line277">line 277</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line290">line 290</a>
     </li></ul></dd>
     
 
@@ -1921,6 +2060,168 @@ const tools = new tls.Tools();</code></pre>
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="webSearch"><span class="type-signature"></span>webSearch<span class="signature">(url, message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Web search a url, specifically better for images.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The url to search.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Discord.Message</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The message to respond to.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>Isn't very reliable.</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line128">line 128</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -1942,7 +2243,7 @@ const tools = new tls.Tools();</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Sun May 19 2019 16:34:09 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Mon May 20 2019 22:11:55 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
