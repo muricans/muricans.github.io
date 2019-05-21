@@ -1,0 +1,6 @@
+{
+	"commands": [{
+		"name": "__defaultcmdjson1",
+		"message": "default json command"
+	}]
+}
