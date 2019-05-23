@@ -1,6 +1,7 @@
 {
 	"commands": [{
-		"name": "__defaultcmdjson1",
-		"message": "default json command"
+		"server": "123",
+		"name": "defaultcommand",
+		"message": "you wont see this"
 	}]
 }

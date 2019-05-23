@@ -1,5 +1,5 @@
 {
-    "prefix": "!",
+	"bot_owners_id": ["YOUR_DISCORD_USER_ID"],
     "token": "YOURTOKEN",
     "debug": false,
     "fileLogging": true,
