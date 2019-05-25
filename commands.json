@@ -1,7 +1,0 @@
-{
-	"commands": [{
-		"server": "123",
-		"name": "defaultcommand",
-		"message": "you wont see this"
-	}]
-}
