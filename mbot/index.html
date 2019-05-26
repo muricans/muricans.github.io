@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Muricans - mbot</title>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body id="body">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <nav id="navigation" class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark">
+        <a class="navbar-brand test" href="#">Muricans</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav test">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profiles
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="https://www.twitch.tv/muricanslol">Twitch</a>
+                        <a class="dropdown-item" href="https://github.com/muricans">GitHub</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Documentation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mbot">mbot</h1>
+        <hr id="hr">
+        <div class="article">
+            <h2 class="header">modules</h2>
+            <div class="article-text">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Option</th>
+                            <th scope="col">Option</th>
+                            <th scope="col">Option</th>
+                            <th scope="col">Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>welcomemessage</td>
+                            <td>message</td>
+                            <td>edit</td>
+                            <td>use</td>
+                            <td>channel</td>
+                        </tr>
+                        <tr>
+                            <td>leavemessage</td>
+                            <td>message</td>
+                            <td>edit</td>
+                            <td>use</td>
+                            <td>channel</td>
+                        </tr>
+                        <tr>
+                            <td>serverinfo</td>
+                            <td colspan="4">use</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr id="hr">
+            <h2 class="header">module options</h2>
+            <div class="article-text">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Returns</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>message</td>
+                            <td>the message that module has</td>
+                        </tr>
+                        <tr>
+                            <td>edit</td>
+                            <td>edit the message from that module</td>
+                        </tr>
+                        <tr>
+                            <td>use</td>
+                            <td>whether you want to use that module or not &lt;true|false></td>
+                        </tr>
+                        <tr>
+                            <td>channel</td>
+                            <td>The channel that module uses</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr id="hr">
+            <h2 class="header">command permissions</h2>
+            <div class="article-text">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Command</th>
+                            <th scope="col">Permission</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>modules</td>
+                            <td>administrator</td>
+                        </tr>
+                        <tr>
+                            <td>mute</td>
+                            <td>kick members</td>
+                        </tr>
+                        <tr>
+                            <td>unmute</td>
+                            <td>kick members</td>
+                        </tr>
+                        <tr>
+                            <td>prefix</td>
+                            <td>administrator</td>
+                        </tr>
+                        <tr>
+                            <td>set</td>
+                            <td>bot owner</td>
+                        </tr>
+                        <tr>
+                            <td>suggestions</td>
+                            <td>bot owner</td>
+                        </tr>
+                        <tr>
+                            <td>delete</td>
+                            <td>administrator</td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td>administrator</td>
+                        </tr>
+                        <tr>
+                            <td>clean</td>
+                            <td>manage messages, administrator</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

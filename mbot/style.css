@@ -1,0 +1,95 @@
+.article {
+    position: absolute;
+    padding-right: 190px;
+    left: 300px;
+    top: 200px;
+}
+
+.header {
+    position: relative;
+    font-weight: 600;
+    left: -50px;
+}
+
+.mbot {
+    padding-top: 50px;
+}
+
+.test {
+    padding-top: 10px;
+}
+
+.test2 {
+    padding-top: 15px;
+}
+
+.article-text {
+    top: 260px;
+    font-size: 15px;
+}
+
+#navigation {
+    padding-left: 50px;
+    padding-top: 0px;
+}
+
+#body {
+    padding-top: 50px;
+    background-color: aliceblue;
+}
+
+#bootstrap {
+    color: cornflowerblue;;
+    position: relative;
+    top: 370px;
+    right: 125px;
+}
+
+.resources {
+    position: relative;
+    top: 250px;
+}
+
+#site-title {
+    color: dimgray;
+}
+
+#buttons {
+    padding-top: 50px;
+}
+
+#usage-reg {
+    font-size: 16px;
+}
+
+#maven-header {
+    font-size: 20px;
+    font-weight:600;
+    position: absolute;
+    right: 500px;
+    left: 450px;
+    top: 230px;
+}
+
+.maven {
+    font-family: "Courier New";
+    position: absolute;
+    right: 470px;
+    left: 470px;
+    top: 259px;
+}
+
+#code {
+    color: red;
+}
+
+#hr {
+    border-color: black;
+}
+
+.discord {
+    position: relative;
+    bottom: 350px;
+    right: 100px;
+    
+}
