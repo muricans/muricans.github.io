@@ -1,7 +1,8 @@
 {
-	"bot_owners_id": ["YOUR_DISCORD_USER_ID"],
+    "bot_owners_id": ["YOUR_DISCORD_USER_ID"],
     "token": "YOURTOKEN",
     "debug": false,
     "fileLogging": true,
-    "memory": 50
+    "memory": 500,
+    "newsAPIKey": "https://newsapi.org/ to get your API key."
 }
