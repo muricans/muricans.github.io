@@ -314,6 +314,212 @@ const tools = new tls.Tools();</code></pre>
     
 
     
+    <h4 class="name" id="createTimer"><span class="type-signature"></span>createTimer<span class="signature">(userId, time, timerId, timerName)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a timer for a user.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The id of the user to add the timer to.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount of time the timer should run for in milliseconds.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timerId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The id of the timer to create.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timerName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the timer to create.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line752">line 752</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="danbooru"><span class="type-signature">(async) </span>danbooru<span class="signature">(message, tags)</span><span class="type-signature"></span></h4>
     
 
@@ -438,7 +644,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line469">line 469</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line475">line 475</a>
     </li></ul></dd>
     
 
@@ -470,6 +676,189 @@ const tools = new tls.Tools();</code></pre>
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>tools.danbooru(message, 'my_tag+my_other_tag');</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteTimer"><span class="type-signature"></span>deleteTimer<span class="signature">(userId, timerId, timerName)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Delete a timer from a user.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID of the user to delete the timer from.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timerId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The timers id to delete.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timerName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the timer to delete.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line778">line 778</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -831,7 +1220,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line623">line 623</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line600">line 600</a>
     </li></ul></dd>
     
 
@@ -973,7 +1362,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line256">line 256</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line261">line 261</a>
     </li></ul></dd>
     
 
@@ -1140,7 +1529,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line211">line 211</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line216">line 216</a>
     </li></ul></dd>
     
 
@@ -1307,7 +1696,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line234">line 234</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line239">line 239</a>
     </li></ul></dd>
     
 
@@ -1453,7 +1842,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line406">line 406</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line412">line 412</a>
     </li></ul></dd>
     
 
@@ -1645,7 +2034,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line139">line 139</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line144">line 144</a>
     </li></ul></dd>
     
 
@@ -1679,6 +2068,161 @@ const tools = new tls.Tools();</code></pre>
     <pre class="prettyprint"><code>tools.getNLMessage('welcomeMessage', "someserverid", (use, message, channel) => {
  // stuff here
 });</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getPoints"><span class="type-signature"></span>getPoints<span class="signature">(id)</span><span class="type-signature"> &rarr; {Promise.&lt;number>}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Id of the user to get points from.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line116">line 116</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise containing the points of the user.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;number></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
 
 
 
@@ -1812,7 +2356,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line164">line 164</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line169">line 169</a>
     </li></ul></dd>
     
 
@@ -1846,6 +2390,235 @@ const tools = new tls.Tools();</code></pre>
     <pre class="prettyprint"><code>tools.getPrefix("someserverid", (prefix) => {
  // stuff here
 });</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="handleSubredditImage"><span class="type-signature"></span>handleSubredditImage<span class="signature">(image, title, subreddit, randomEmoji, message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Handle a subreddit image.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>image</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The url of the image to process.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Title to add to the image.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subreddit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The subreddit to be displayed with the image.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>randomEmoji</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The emoji to be shown at the footer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Discord.Message</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The message to respond to.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line387">line 387</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1975,7 +2748,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line305">line 305</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line310">line 310</a>
     </li></ul></dd>
     
 
@@ -2166,7 +2939,7 @@ const tools = new tls.Tools();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line702">line 702</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line666">line 666</a>
     </li></ul></dd>
     
 
@@ -2191,6 +2964,165 @@ const tools = new tls.Tools();</code></pre>
 
 
 
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parsePercent"><span class="type-signature"></span>parsePercent<span class="signature">(percentage)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get the value of a percentage.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>percentage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The percentage to parse.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line797">line 797</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The value of the given percentage.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -2306,7 +3238,7 @@ All others will be turned into seconds.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line744">line 744</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line712">line 712</a>
     </li></ul></dd>
     
 
@@ -2355,6 +3287,13 @@ All others will be turned into seconds.
     
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const hourInMil = tools.parseTime('10h');
+console.log(hourInMil);
+// -> 36000000</code></pre>
 
 
 
@@ -2557,7 +3496,7 @@ All others will be turned into seconds.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line346">line 346</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line351">line 351</a>
     </li></ul></dd>
     
 
@@ -2763,7 +3702,7 @@ All others will be turned into seconds.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line571">line 571</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line564">line 564</a>
     </li></ul></dd>
     
 
@@ -2928,7 +3867,7 @@ All others will be turned into seconds.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line430">line 430</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line436">line 436</a>
     </li></ul></dd>
     
 
@@ -3141,7 +4080,7 @@ All others will be turned into seconds.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line523">line 523</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line529">line 529</a>
     </li></ul></dd>
     
 
@@ -3473,7 +4412,7 @@ All others will be turned into seconds.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line724">line 724</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line688">line 688</a>
     </li></ul></dd>
     
 
@@ -3610,7 +4549,7 @@ All others will be turned into seconds.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line691">line 691</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line655">line 655</a>
     </li></ul></dd>
     
 
@@ -3770,7 +4709,7 @@ All others will be turned into seconds.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line187">line 187</a>
+        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line192">line 192</a>
     </li></ul></dd>
     
 
@@ -3808,168 +4747,6 @@ All others will be turned into seconds.
 
 
         
-            
-
-    
-
-    
-    <h4 class="name" id="webSearch"><span class="type-signature"></span>webSearch<span class="signature">(url, message)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Web search a url, specifically better for images.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The url to search.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>message</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Discord.Message</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The message to respond to.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>Isn't very reliable.</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line380">line 380</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     
 
     
@@ -3991,7 +4768,7 @@ All others will be turned into seconds.
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 18:01:59 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Sat Jun 08 2019 13:47:08 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
