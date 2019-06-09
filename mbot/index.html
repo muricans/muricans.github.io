@@ -62,7 +62,7 @@
         <hr id="hr">
         <div class="article">
             <h2 class="header">modules</h2>
-            <div class="article-text">
+            <div class="article-text" id="module-names">
                 <table class="table table-bordered table-hover bg-light">
                     <thead>
                         <tr>
@@ -108,7 +108,7 @@
             </div>
             <hr id="hr">
             <h2 class="header">module options</h2>
-            <div class="article-text">
+            <div class="article-text" id="module-options">
                 <table class="table table-bordered table-hover bg-light">
                     <thead>
                         <tr>
@@ -146,7 +146,7 @@
             </div>
             <hr id="hr">
             <h2 class="header">command permissions</h2>
-            <div class="article-text">
+            <div class="article-text" id="permissions">
                 <table class="table table-bordered table-hover bg-light">
                     <thead>
                         <tr>
@@ -195,12 +195,16 @@
                             <td>create</td>
                             <td>?administrator</td>
                         </tr>
+                        <tr>
+                            <td>ban</td>
+                            <td>ban members, administrator, (user MUST have a higher role than target user)</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <hr id="hr">
             <h2 class="header">custom command modules</h2>
-            <div class="article-text">
+            <div class="article-text" id="custom-commands">
                 <p>When making a custom command, you can start the command message with '{module}' to turn it into a
                     module command.</p>
                 <table class="table table-bordered table-hover bg-light">
