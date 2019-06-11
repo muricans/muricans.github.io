@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line11">line 11</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -120,6 +120,18 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const myEmbeds = [new Discord.RichEmbed().addField('This is', 'a field!'),
+ new Discord.RichEmbed().addField('This is', 'another field!')];
+embedBuilder
+ .setChannel(message.channel)
+ .setTime(30000)
+ .setEmbeds(myEmbeds)
+ .build();
+// returns -> an embed with 2 pages that will listen for reactions for a total of 30 seconds. embed will be sent to channel specified.</code></pre>
 
 
 
@@ -193,7 +205,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line15">line 15</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -261,7 +273,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line23">line 23</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -329,7 +341,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line19">line 19</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -397,7 +409,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line27">line 27</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -522,7 +534,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line70">line 70</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line79">line 79</a>
     </li></ul></dd>
     
 
@@ -682,7 +694,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line222">line 222</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line232">line 232</a>
     </li></ul></dd>
     
 
@@ -889,7 +901,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line111">line 111</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line120">line 120</a>
     </li></ul></dd>
     
 
@@ -977,7 +989,156 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line262">line 262</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line290">line 290</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="cancel"><span class="type-signature"></span>cancel<span class="signature">(callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Cancel the EmbedBuilder
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line280">line 280</a>
     </li></ul></dd>
     
 
@@ -1110,7 +1271,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line234">line 234</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line244">line 244</a>
     </li></ul></dd>
     
 
@@ -1194,7 +1355,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line78">line 78</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -1425,7 +1586,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line135">line 135</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line144">line 144</a>
     </li></ul></dd>
     
 
@@ -1562,7 +1723,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line163">line 163</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line172">line 172</a>
     </li></ul></dd>
     
 
@@ -1695,7 +1856,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line43">line 43</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -1828,7 +1989,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line244">line 244</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line254">line 254</a>
     </li></ul></dd>
     
 
@@ -1961,7 +2122,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line52">line 52</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -2098,7 +2259,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line193">line 193</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line202">line 202</a>
     </li></ul></dd>
     
 
@@ -2274,7 +2435,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line98">line 98</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line107">line 107</a>
     </li></ul></dd>
     
 
@@ -2411,7 +2572,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line203">line 203</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line212">line 212</a>
     </li></ul></dd>
     
 
@@ -2548,7 +2709,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line173">line 173</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line182">line 182</a>
     </li></ul></dd>
     
 
@@ -2685,7 +2846,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line183">line 183</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line192">line 192</a>
     </li></ul></dd>
     
 
@@ -2818,7 +2979,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line61">line 61</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line70">line 70</a>
     </li></ul></dd>
     
 
@@ -2966,7 +3127,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line146">line 146</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line155">line 155</a>
     </li></ul></dd>
     
 
@@ -3099,7 +3260,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line86">line 86</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -3232,7 +3393,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line122">line 122</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line131">line 131</a>
     </li></ul></dd>
     
 
@@ -3365,7 +3526,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line34">line 34</a>
+        <a href="embedbuilder.js.html">embedbuilder.js</a>, <a href="embedbuilder.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -3417,7 +3578,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Mon Jun 10 2019 17:26:16 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Tue Jun 11 2019 15:43:21 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
