@@ -99,6 +99,7 @@ embedBuilder
 						<section class="tsd-index-section ">
 							<h3>Events</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-static"><a href="embedbuilder.html#create" class="tsd-kind-icon">create</a></li>
 								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-static"><a href="embedbuilder.html#stop" class="tsd-kind-icon">stop</a></li>
 							</ul>
 						</section>
@@ -149,6 +150,7 @@ embedBuilder
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#setlastemoji" class="tsd-kind-icon">set<wbr>Last<wbr>Emoji</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="embedbuilder.html#setmaxlisteners" class="tsd-kind-icon">set<wbr>Max<wbr>Listeners</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#setnextemoji" class="tsd-kind-icon">set<wbr>Next<wbr>Emoji</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#setpageformat" class="tsd-kind-icon">set<wbr>Page<wbr>Format</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#setstopemoji" class="tsd-kind-icon">set<wbr>Stop<wbr>Emoji</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#setthumbnail" class="tsd-kind-icon">set<wbr>Thumbnail</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#settime" class="tsd-kind-icon">set<wbr>Time</a></li>
@@ -166,6 +168,37 @@ embedBuilder
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Events</h2>
 				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-static">
+					<a name="create" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
+					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>sent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span>, reactions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Collection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">MessageReaction</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L416">index.ts:416</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Emitted when the builder is finished creating the first page.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sent: <span class="tsd-signature-type">Message</span></h5>
+								</li>
+								<li>
+									<h5>reactions: <span class="tsd-signature-type">Collection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">MessageReaction</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-static">
 					<a name="stop" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> stop</h3>
 					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class tsd-is-static">
@@ -175,7 +208,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L378">index.ts:378</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L411">index.ts:411</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -226,7 +259,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L146">index.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L166">index.ts:166</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -249,7 +282,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L99">index.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L119">index.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -277,7 +310,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L243">index.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L263">index.ts:263</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -332,7 +365,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L291">index.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L315">index.ts:315</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -355,7 +388,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L167">index.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L187">index.ts:187</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -430,7 +463,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L153">index.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L173">index.ts:173</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -453,7 +486,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L160">index.ts:160</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L180">index.ts:180</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -476,7 +509,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L305">index.ts:305</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L329">index.ts:329</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -486,6 +519,9 @@ embedBuilder
 								<dl class="tsd-comment-tags">
 									<dt>emits</dt>
 									<dd><p>stop</p>
+									</dd>
+									<dt>emits</dt>
+									<dd><p>create</p>
 									</dd>
 								</dl>
 							</div>
@@ -503,13 +539,18 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L279">index.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L300">index.ts:300</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Cancel the EmbedBuilder</p>
+									<p>Cancels the EmbedBuilder</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>emits</dt>
+									<dd><p>stop</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -531,7 +572,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L72">index.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L92">index.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -562,7 +603,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L254">index.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L274">index.ts:274</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -637,7 +678,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L107">index.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L127">index.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1052,7 +1093,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L181">index.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L201">index.ts:201</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1081,7 +1122,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L203">index.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L223">index.ts:223</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1103,13 +1144,13 @@ embedBuilder
 					<a name="setchannel" class="tsd-anchor"></a>
 					<h3>set<wbr>Channel</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Channel<span class="tsd-signature-symbol">(</span>channel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TextChannel</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Channel<span class="tsd-signature-symbol">(</span>channel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TextChannel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">DMChannel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">GroupDMChannel</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L62">index.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L82">index.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1117,7 +1158,7 @@ embedBuilder
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>channel: <span class="tsd-signature-type">TextChannel</span></h5>
+									<h5>channel: <span class="tsd-signature-type">TextChannel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">DMChannel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">GroupDMChannel</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The channel the embed will be sent to.</p>
 									</div>
@@ -1137,7 +1178,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L261">index.ts:261</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L281">index.ts:281</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1160,7 +1201,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L125">index.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L145">index.ts:145</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1183,7 +1224,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L81">index.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L101">index.ts:101</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1211,7 +1252,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L227">index.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L247">index.ts:247</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1239,7 +1280,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L118">index.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L138">index.ts:138</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1265,7 +1306,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L132">index.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L152">index.ts:152</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1288,7 +1329,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L235">index.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L255">index.ts:255</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1341,7 +1382,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L211">index.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L231">index.ts:231</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1360,6 +1401,38 @@ embedBuilder
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setpageformat" class="tsd-anchor"></a>
+					<h3>set<wbr>Page<wbr>Format</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Page<wbr>Format<span class="tsd-signature-symbol">(</span>format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L73">index.ts:73</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The format that the footer will use to display page number (if enabled).</p>
+										<pre><code class="language-javascript"><span class="hljs-comment">// %p = current page</span>
+<span class="hljs-comment">// %m = the amount of pages there are</span>
+embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
+<span class="hljs-comment">// -&gt; Page (1/3)</span></code></pre>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setstopemoji" class="tsd-anchor"></a>
 					<h3>set<wbr>Stop<wbr>Emoji</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -1369,7 +1442,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L219">index.ts:219</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L239">index.ts:239</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1397,7 +1470,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L139">index.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L159">index.ts:159</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1420,7 +1493,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L90">index.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L110">index.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1448,7 +1521,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L188">index.ts:188</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L208">index.ts:208</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1471,7 +1544,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L111">index.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L131">index.ts:131</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1494,7 +1567,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L174">index.ts:174</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L194">index.ts:194</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1517,7 +1590,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L286">index.ts:286</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L310">index.ts:310</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1540,7 +1613,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/cd9f9a6/index.ts#L53">index.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/f08d59a/index.ts#L58">index.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1609,6 +1682,9 @@ embedBuilder
 					<li class="current tsd-kind-class">
 						<a href="embedbuilder.html" class="tsd-kind-icon">Embed<wbr>Builder</a>
 						<ul>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-static">
+								<a href="embedbuilder.html#create" class="tsd-kind-icon">create</a>
+							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-static">
 								<a href="embedbuilder.html#stop" class="tsd-kind-icon">stop</a>
 							</li>
@@ -1728,6 +1804,9 @@ embedBuilder
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="embedbuilder.html#setnextemoji" class="tsd-kind-icon">set<wbr>Next<wbr>Emoji</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="embedbuilder.html#setpageformat" class="tsd-kind-icon">set<wbr>Page<wbr>Format</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="embedbuilder.html#setstopemoji" class="tsd-kind-icon">set<wbr>Stop<wbr>Emoji</a>
