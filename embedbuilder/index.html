@@ -65,19 +65,23 @@
 				<h1 id="discord-embedbuilder">discord-embedbuilder</h1>
 				<p><a href="https://nodei.co/npm/discord-embedbuilder"><img src="https://nodei.co/npm/discord-embedbuilder.png?downloads=true" alt="NPM"></a></p>
 				<p>npm module to make creating embeds with mutliple pages a little bit easier</p>
-				<p><a href="https://muricans.github.io/embedbuilder">Documentation</a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/v11">v11 Documentation</a></p>
+				<p><a href="https://muricans.github.io/embedbuilder">v12 Documentation</a></p>
 				<h2 id="quick-install">Quick Install</h2>
+				<p><code>npm install muricans/discord-embedbuilder#v11</code></p>
+				<p>discord.js v12</p>
 				<p><code>npm install discord-embedbuilder</code></p>
 				<h2 id="methods">Methods</h2>
-				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/stable/class/RichEmbed">RichEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
+				<p>Some methods here are different than those for discord.js v11.</p>
+				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/master/class/MessageEmbed">MessageEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
 				<p><code>usePages(use)</code></p>
 				<p>If this is set to false, the builder will not use the next, back, last, first, stop emotes.</p>
 				<p><code>setChannel(channel)</code></p>
 				<p>The channel that is set here will be the channel the pages are sent to.</p>
 				<p><code>setEmbeds(embeds)</code></p>
-				<p>The array of RichEmbeds put here will be the ones that are used to make the pages. You can also add embeds using addEmbed.</p>
+				<p>The array of MessageEmbeds put here will be the ones that are used to make the pages. You can also add embeds using addEmbed.</p>
 				<p><code>addEmbed(embed)</code></p>
-				<p>Adds a RichEmbed to the array of embeds.</p>
+				<p>Adds a MessageEmbed to the array of embeds.</p>
 				<p><code>concatEmbeds(embeds)</code></p>
 				<p>Puts the array of embeds given at the end of the current embeds array.</p>
 				<p><code>setTime(time)</code></p>
@@ -93,10 +97,11 @@
     builder.cancel();
     sent.channel.send(<span class="hljs-string">`A new message<span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
 });</code></pre>
-				<p><code>addEmoji(emojiList)</code></p>
+				<p><code>addEmojis(emojiList)</code></p>
 				<p>Add multiple emojis to do different actions.</p>
 				<pre><code class="language-javascript">builder.addEmojis([{
-    <span class="hljs-string">'❗'</span>: <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
+    <span class="hljs-attr">emoji</span>: <span class="hljs-string">'❗'</span>,
+    <span class="hljs-keyword">do</span>(sent, page, emoji) =&gt; {
         sent.delete();
         builder.cancel();
         sent.channel.send(<span class="hljs-string">`A new message<span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
@@ -112,11 +117,24 @@
 				<p><code>setPageFormat(format)</code></p>
 				<p>If showing page numbers, this is the format that will be used.</p>
 				<p>By default format is %p/%m which converts to current/max.</p>
+				<p><code>calculatePages(data, dataPerPage, insert)</code></p>
+				<p>This calculates pages for the builder to work with.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">/*
+This will generate a builder with a data length set to an array.
+It will have 10 fields per page, which will all be inline, containing username and points data.
+*/</span>
+embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (embed, i) =&gt; {
+    embed.addField(users[i].username, users[i].points, <span class="hljs-literal">true</span>);
+});</code></pre>
+				<p><code>updatePage(page)</code></p>
+				<p>Updates the current page to the one set there. This checks if the page is valid itself. Make sure the first page of the builder has already gone through before using this.</p>
 				<h2 id="events">Events</h2>
 				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#create"><code>create</code></a></p>
 				<p>Emitted from build() when the first page has finished building.</p>
 				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#delete"><code>stop</code></a></p>
 				<p>Emitted from build() when the timer has run out, or the collector is canceled in any way.</p>
+				<p><a href="https://muricans.github.io/embedbuilder/v12/classes/embedbuilder.html#pageUpdate">&#39;pageUpdate&#39;</a></p>
+				<p>Emitted from updatePage(). Sets the new page for the bot.</p>
 				<h2 id="example">Example</h2>
 				<p>First import discord-embedbuilder into your project.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> EmbedBuilder = <span class="hljs-built_in">require</span>(<span class="hljs-string">'discord-embedbuilder'</span>);</code></pre>
@@ -127,9 +145,9 @@
         .setChannel(message.channel)
         .setTime(<span class="hljs-number">60000</span>); <span class="hljs-comment">// Time is in milliseconds</span>
     <span class="hljs-keyword">const</span> myEmbedArray = [
-        <span class="hljs-keyword">new</span> Discord.RichEmbed().addField(<span class="hljs-string">'1st'</span>, <span class="hljs-string">'page'</span>),
-        <span class="hljs-keyword">new</span> Discord.RichEmbed().addField(<span class="hljs-string">'2nd'</span>, <span class="hljs-string">'page'</span>), 
-        <span class="hljs-keyword">new</span> Discord.RichEmbed().addField(<span class="hljs-string">'3rd'</span>, <span class="hljs-string">'page'</span>),
+        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">'1st'</span>, <span class="hljs-string">'page'</span>),
+        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">'2nd'</span>, <span class="hljs-string">'page'</span>), 
+        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">'3rd'</span>, <span class="hljs-string">'page'</span>),
     ];
     builder
         .setEmbeds(myEmbedArray)
@@ -166,7 +184,7 @@
             <span class="hljs-keyword">if</span> (i === <span class="hljs-number">50</span>)
                 <span class="hljs-keyword">break</span>;
             <span class="hljs-keyword">if</span> (!embeds.getEmbeds()[m - <span class="hljs-number">1</span>] &amp;&amp; users[i]) {
-                embeds.addEmbed(<span class="hljs-keyword">new</span> Discord.RichEmbed());
+                embeds.addEmbed(<span class="hljs-keyword">new</span> Discord.MessageEmbed());
                 pages++;
             }
             <span class="hljs-keyword">if</span> (i === (<span class="hljs-number">10</span> * m) - <span class="hljs-number">1</span>)
@@ -207,12 +225,6 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
 						<a href="classes/embedbuilder.html" class="tsd-kind-icon">Embed<wbr>Builder</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
-						<a href="interfaces/emojis.html" class="tsd-kind-icon">Emojis</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
-						<a href="interfaces/memojis.html" class="tsd-kind-icon">MEmojis</a>
 					</li>
 				</ul>
 			</nav>
