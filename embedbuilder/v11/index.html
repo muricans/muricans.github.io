@@ -72,15 +72,15 @@
 				<p>discord.js v12</p>
 				<p><code>npm install discord-embedbuilder</code></p>
 				<h2 id="methods">Methods</h2>
-				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/stable/class/RichEmbed">RichEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
+				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/master/class/MessageEmbed">MessageEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
 				<p><code>usePages(use)</code></p>
 				<p>If this is set to false, the builder will not use the next, back, last, first, stop emotes.</p>
 				<p><code>setChannel(channel)</code></p>
 				<p>The channel that is set here will be the channel the pages are sent to.</p>
 				<p><code>setEmbeds(embeds)</code></p>
-				<p>The array of RichEmbeds put here will be the ones that are used to make the pages. You can also add embeds using addEmbed.</p>
+				<p>The array of MessageEmbeds put here will be the ones that are used to make the pages. You can also add embeds using addEmbed.</p>
 				<p><code>addEmbed(embed)</code></p>
-				<p>Adds a RichEmbed to the array of embeds.</p>
+				<p>Adds a MessageEmbed to the array of embeds.</p>
 				<p><code>concatEmbeds(embeds)</code></p>
 				<p>Puts the array of embeds given at the end of the current embeds array.</p>
 				<p><code>setTime(time)</code></p>
@@ -169,7 +169,7 @@
             <span class="hljs-keyword">if</span> (i === <span class="hljs-number">50</span>)
                 <span class="hljs-keyword">break</span>;
             <span class="hljs-keyword">if</span> (!embeds.getEmbeds()[m - <span class="hljs-number">1</span>] &amp;&amp; users[i]) {
-                embeds.addEmbed(<span class="hljs-keyword">new</span> Discord.RichEmbed());
+                embeds.addEmbed(<span class="hljs-keyword">new</span> Discord.MessageEmbed());
                 pages++;
             }
             <span class="hljs-keyword">if</span> (i === (<span class="hljs-number">10</span> * m) - <span class="hljs-number">1</span>)
