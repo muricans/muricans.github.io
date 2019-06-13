@@ -97,13 +97,12 @@
     builder.cancel();
     sent.channel.send(<span class="hljs-string">`A new message<span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
 });</code></pre>
-				<p><code>addEmojis(emojiList)</code></p>
+				<p><code>addEmojis(emojis)</code></p>
 				<p>Add multiple emojis to do different actions.</p>
 				<pre><code class="language-javascript">builder.addEmojis([{
-    <span class="hljs-attr">emoji</span>: <span class="hljs-string">'❗'</span>,
-    <span class="hljs-keyword">do</span>(sent, page, emoji) =&gt; {
-        sent.delete();
+    <span class="hljs-string">'❗'</span>: <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
         builder.cancel();
+        sent.delete();
         sent.channel.send(<span class="hljs-string">`A new message<span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
     },
 }]);</code></pre>
@@ -128,12 +127,15 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 });</code></pre>
 				<p><code>updatePage(page)</code></p>
 				<p>Updates the current page to the one set there. This checks if the page is valid itself. Make sure the first page of the builder has already gone through before using this.</p>
+				<p><code>setPageEmoji(emoji, newEmoji)</code></p>
+				<p>Replaces current type of emoji given with the new emoji provided.</p>
+				<p>Types allowed: back, first, stop, last, next</p>
 				<h2 id="events">Events</h2>
 				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#create"><code>create</code></a></p>
 				<p>Emitted from build() when the first page has finished building.</p>
 				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#delete"><code>stop</code></a></p>
 				<p>Emitted from build() when the timer has run out, or the collector is canceled in any way.</p>
-				<p><a href="https://muricans.github.io/embedbuilder/v12/classes/embedbuilder.html#pageUpdate">&#39;pageUpdate&#39;</a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#pageUpdate">&#39;pageUpdate&#39;</a></p>
 				<p>Emitted from updatePage(). Sets the new page for the bot.</p>
 				<h2 id="example">Example</h2>
 				<p>First import discord-embedbuilder into your project.</p>
@@ -154,7 +156,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
         .setTitle(<span class="hljs-string">'This title stays the same on all pages!'</span>)
         .build(); <span class="hljs-comment">// No need to send a message, building it will automatically do it.</span>
 });</code></pre>
-				<p>Here&#39;s an example taken from my bot <a href="https://github.com/muricans/mbot">mbot</a></p>
+				<p>Here&#39;s an example taken from my bot <a href="https://github.com/muricans/mbot/tree/v12-testing">mbot</a></p>
 				<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = {
     <span class="hljs-attr">name</span>: <span class="hljs-string">'leaderboard'</span>,
     <span class="hljs-attr">description</span>: <span class="hljs-string">'Get up to 50 users with the most points'</span>,
@@ -178,32 +180,9 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
             });
         }
         users.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> (a.points &gt; b.points) ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
-        <span class="hljs-keyword">let</span> pages = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">let</span> m = <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span> * m; i++) {
-            <span class="hljs-keyword">if</span> (i === <span class="hljs-number">50</span>)
-                <span class="hljs-keyword">break</span>;
-            <span class="hljs-keyword">if</span> (!embeds.getEmbeds()[m - <span class="hljs-number">1</span>] &amp;&amp; users[i]) {
-                embeds.addEmbed(<span class="hljs-keyword">new</span> Discord.MessageEmbed());
-                pages++;
-            }
-            <span class="hljs-keyword">if</span> (i === (<span class="hljs-number">10</span> * m) - <span class="hljs-number">1</span>)
-                m++;
-        }
-        <span class="hljs-keyword">let</span> multiplier = <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span> * multiplier; i++) {
-            <span class="hljs-keyword">if</span> (i === <span class="hljs-number">50</span>) {
-                <span class="hljs-keyword">break</span>;
-            }
-            <span class="hljs-keyword">if</span> (users[i]) {
-                embeds.getEmbeds()[multiplier - <span class="hljs-number">1</span>]
-                    .addField(<span class="hljs-string">`<span class="hljs-subst">${i + <span class="hljs-number">1</span>}</span>. <span class="hljs-subst">${users[i].username}</span>`</span>, users[i].points, <span class="hljs-literal">true</span>)
-                    .setFooter(<span class="hljs-string">`Page <span class="hljs-subst">${multiplier}</span>/<span class="hljs-subst">${pages}</span>`</span>);
-                <span class="hljs-keyword">if</span> (i === (<span class="hljs-number">10</span> * multiplier) - <span class="hljs-number">1</span>) {
-                    multiplier++;
-                }
-            }
-        }
+        embeds.calculatePages(users.length, <span class="hljs-number">10</span>, (embed, i) =&gt; {
+            embed.addField(<span class="hljs-string">`<span class="hljs-subst">${i + <span class="hljs-number">1</span>}</span>. <span class="hljs-subst">${users[i].username}</span>`</span>, users[i].points, <span class="hljs-literal">true</span>);
+        });
         embeds
             .setTitle(<span class="hljs-string">'Points Leaderboard'</span>)
             .setTime(<span class="hljs-number">2</span> * <span class="hljs-number">60000</span>)
@@ -225,6 +204,12 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
 						<a href="classes/embedbuilder.html" class="tsd-kind-icon">Embed<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-private tsd-is-not-exported">
+						<a href="interfaces/emoji.html" class="tsd-kind-icon">Emoji</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-private tsd-is-not-exported">
+						<a href="interfaces/emojis.html" class="tsd-kind-icon">Emojis</a>
 					</li>
 				</ul>
 			</nav>

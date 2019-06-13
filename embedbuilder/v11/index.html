@@ -72,15 +72,15 @@
 				<p>discord.js v12</p>
 				<p><code>npm install discord-embedbuilder</code></p>
 				<h2 id="methods">Methods</h2>
-				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/master/class/MessageEmbed">MessageEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
+				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/stable/class/RichEmbed">RichEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
 				<p><code>usePages(use)</code></p>
 				<p>If this is set to false, the builder will not use the next, back, last, first, stop emotes.</p>
 				<p><code>setChannel(channel)</code></p>
 				<p>The channel that is set here will be the channel the pages are sent to.</p>
 				<p><code>setEmbeds(embeds)</code></p>
-				<p>The array of MessageEmbeds put here will be the ones that are used to make the pages. You can also add embeds using addEmbed.</p>
+				<p>The array of RichEmbeds put here will be the ones that are used to make the pages. You can also add embeds using addEmbed.</p>
 				<p><code>addEmbed(embed)</code></p>
-				<p>Adds a MessageEmbed to the array of embeds.</p>
+				<p>Adds a RichEmbed to the array of embeds.</p>
 				<p><code>concatEmbeds(embeds)</code></p>
 				<p>Puts the array of embeds given at the end of the current embeds array.</p>
 				<p><code>setTime(time)</code></p>
@@ -115,10 +115,25 @@
 				<p><code>setPageFormat(format)</code></p>
 				<p>If showing page numbers, this is the format that will be used.</p>
 				<p>By default format is %p/%m which converts to current/max.</p>
+				<p><code>calculatePages(data, dataPerPage, insert)</code></p>
+				<p>This calculates pages for the builder to work with.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">/*
+This will generate a builder with a data length set to an array.
+It will have 10 fields per page, which will all be inline, containing username and points data.
+*/</span>
+embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (embed, i) =&gt; {
+    embed.addField(users[i].username, users[i].points, <span class="hljs-literal">true</span>);
+});</code></pre>
+				<p><code>updatePage(page)</code></p>
+				<p>Updates the current page to the one provided. This checks if the page is valid itself. Make sure the first page of the builder has already gone through before using this.</p>
+				<p><code>setPageEmoji(emoji, newEmoji)</code></p>
+				<p>Replaces current type of emoji given with the new emoji provided.</p>
+				<p>Types allowed: back, first, stop, last, next</p>
 				<h2 id="events">Events</h2>
-				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#create"><code>create</code></a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/v11/classes/embedbuilder.html#create"><code>create</code></a></p>
 				<p>Emitted from build() when the first page has finished building.</p>
-				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#delete"><code>stop</code></a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/v11/classes/embedbuilder.html#delete"><code>stop</code></a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/v11/classes/embedbuilder.html#pageUpdate"><code>pageUpdate</code></a></p>
 				<p>Emitted from build() when the timer has run out, or the collector is canceled in any way.</p>
 				<h2 id="example">Example</h2>
 				<p>First import discord-embedbuilder into your project.</p>
@@ -169,7 +184,7 @@
             <span class="hljs-keyword">if</span> (i === <span class="hljs-number">50</span>)
                 <span class="hljs-keyword">break</span>;
             <span class="hljs-keyword">if</span> (!embeds.getEmbeds()[m - <span class="hljs-number">1</span>] &amp;&amp; users[i]) {
-                embeds.addEmbed(<span class="hljs-keyword">new</span> Discord.MessageEmbed());
+                embeds.addEmbed(<span class="hljs-keyword">new</span> Discord.RichEmbed());
                 pages++;
             }
             <span class="hljs-keyword">if</span> (i === (<span class="hljs-number">10</span> * m) - <span class="hljs-number">1</span>)
@@ -211,7 +226,10 @@
 					<li class=" tsd-kind-class">
 						<a href="classes/embedbuilder.html" class="tsd-kind-icon">Embed<wbr>Builder</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
+					<li class=" tsd-kind-interface tsd-is-private tsd-is-not-exported">
+						<a href="interfaces/emoji.html" class="tsd-kind-icon">Emoji</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-private tsd-is-not-exported">
 						<a href="interfaces/emojis.html" class="tsd-kind-icon">Emojis</a>
 					</li>
 				</ul>
