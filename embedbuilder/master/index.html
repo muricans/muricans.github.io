@@ -67,17 +67,22 @@
 				<p>npm module to make creating embeds with mutliple pages a little bit easier</p>
 				<p><a href="https://muricans.github.io/embedbuilder/v11">v11 Documentation</a></p>
 				<p><a href="https://muricans.github.io/embedbuilder">v12 Documentation</a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/master">master (embedbuilder v3.0.0) documentation</a></p>
 				<h2 id="quick-install">Quick Install</h2>
+				<p>discord.js v11</p>
 				<p><code>npm install muricans/discord-embedbuilder#v11</code></p>
 				<p>discord.js v12</p>
 				<p><code>npm install discord-embedbuilder</code></p>
+				<p>master (embedbuilder v3.0.0)</p>
+				<p><code>npm install muricans/discord-embedbuilder</code></p>
 				<h2 id="methods">Methods</h2>
-				<p>Some methods here are different than those for discord.js v11.</p>
+				<p>Some methods here are different than those for discord.js v11 and v12.</p>
 				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/master/class/MessageEmbed">MessageEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
 				<p><code>usePages(use)</code></p>
 				<p>If this is set to false, the builder will not use the next, back, last, first, stop emotes.</p>
-				<p><code>setChannel(channel)</code></p>
-				<p>The channel that is set here will be the channel the pages are sent to.</p>
+				<p><code>changeChannel(channel)</code></p>
+				<p>Change the current channel.</p>
+				<p><strong><span style="color:red">Warning:</span></strong> This should not be used to set the channel. You can set the channel in the constructor.</p>
 				<p><code>setEmbeds(embeds)</code></p>
 				<p>The array of MessageEmbeds put here will be the ones that are used to make the pages. You can also add embeds using addEmbed.</p>
 				<p><code>addEmbed(embed)</code></p>
@@ -88,8 +93,6 @@
 				<p>This will set how long the builder should listen for emotes. Make sure to set your time as milliseconds.</p>
 				<p><code>getEmbeds()</code></p>
 				<p>Returns the current embeds that the builder has.</p>
-				<p><code>setBackEmoji, setNextEmoji, setFirstEmoji, setLastEmoji, setStopEmoji</code></p>
-				<p>Insert a unicode emoji into one of these methods, and the embedbuilder will use it as the corresponding method name.</p>
 				<p><code>addEmoji(emoji, (sent, page, builder, emoji))</code></p>
 				<p>This will insert the provided emoji into the builder, and when it is clicked it will perform the action that is provided.</p>
 				<pre><code class="language-javascript">builder.addEmoji(<span class="hljs-string">'❗'</span>, (sent, page, emoji) =&gt; {
@@ -131,16 +134,17 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 				<p>Replaces current type of emoji given with the new emoji provided.</p>
 				<p>Types allowed: back, first, stop, last, next</p>
 				<p><code>awaitPageUpdate(user, options)</code></p>
-				<p><a href="https://muricans.github.io/embedbuilder/interfaces/pageupdateoptions.html">options</a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/master/interfaces/pageupdateoptions.html">options</a></p>
 				<p>Create an updater to await responses from a user,
 				then set the builders current page to the page given.</p>
 				<h2 id="events">Events</h2>
-				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#create"><code>create</code></a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/master/classes/embedbuilder.html#create"><code>create</code></a></p>
 				<p>Emitted from build() when the first page has finished building.</p>
-				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#delete"><code>stop</code></a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/master/classes/embedbuilder.html#stop"><code>stop</code></a></p>
 				<p>Emitted from build() when the timer has run out, or the collector is canceled in any way.</p>
-				<p><a href="https://muricans.github.io/embedbuilder/classes/embedbuilder.html#pageUpdate"><code>pageUpdate</code></a></p>
+				<p><a href="https://muricans.github.io/embedbuilder/master/classes/embedbuilder.html#pageUpdate"><code>pageUpdate</code></a></p>
 				<p>Emitted from updatePage(). Sets the new page for the bot.</p>
+				<p>PageUpdater documentation can be found <a href="https://muricans.github.io/embedbuilder/master/classes/pageupdater.html">here</a>.</p>
 				<h2 id="example">Example</h2>
 				<p>First import discord-embedbuilder into your project.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> {
