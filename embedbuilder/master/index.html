@@ -143,7 +143,9 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 				<p>Emitted from updatePage(). Sets the new page for the bot.</p>
 				<h2 id="example">Example</h2>
 				<p>First import discord-embedbuilder into your project.</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> EmbedBuilder = <span class="hljs-built_in">require</span>(<span class="hljs-string">'discord-embedbuilder'</span>);</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> {
+    EmbedBuilder,
+ } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'discord-embedbuilder'</span>);</code></pre>
 				<p>Create a command or some way to get a channel to pass through the builder. If you are unsure on how to make a command, checking <a href="https://discordjs.guide/">this</a> out might be helpful.</p>
 				<p>Next make your embedbuilder.</p>
 				<pre><code class="language-javascript">client.on(<span class="hljs-string">'message'</span>, message =&gt; {
