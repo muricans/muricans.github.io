@@ -201,7 +201,13 @@
                         </tr>
                         <tr>
                             <td>ban</td>
-                            <td>ban members, ?administrator, (user MUST have a higher role than target user)</td>
+                            <td>ban members, ?administrator, (user and bot MUST have a higher role than target user)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>kick</td>
+                            <td>kick members, ?administrator, (user and bot MUST have a higher role than target user)
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -232,6 +238,11 @@
                         <tr>
                             <td>{time}</td>
                             <td>The current time that the bot is hosted in.</td>
+                        </tr>
+                        <tr>
+                            <td>{points}</td>
+                            <td>The points of the mentioned user. If there is no mention, it defaults to the user who
+                                sent the message.</td>
                         </tr>
                     </tbody>
                 </table>
