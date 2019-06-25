@@ -26,12 +26,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>const figlet = require('figlet');
+const chalk = require('chalk');
+console.log(chalk.magenta(figlet.textSync('mbot', {
+  font: "Doom",
+  horizontalLayout: "full",
+})));
+
+/**
  * @typedef cmds 
  * @property {string} id The guild servers id.
  * @property {string} name The commands name.
  * @property {string} message The message the command outputs.
  * 
+ * @typedef prefix
+ * @property {string} id The guild servers id.
+ * @property {string} prefix The guild servers command prefix.
+ * 
+ * @typedef nsfwModule
+ * @property {string} id The guild servers id.
+ * @property {boolean} use Is the guild using nsfw modules
  */
 // init discord lib
 const settings = require('./settings.json');
@@ -41,9 +55,12 @@ const tools = require('./tools.js');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const Logger = require('./logger');
-const figlet = require('figlet');
-const chalk = require('chalk');
 const Database = require('./database/database');
+const tls = new tools.Tools();
+
+process.on('exit', (code) => {
+  Logger.info(`mbot v${pkg.version} has exited with code (${code})`);
+});
 
 if (settings.token === "YOURTOKEN" || !settings.token.length) {
   Logger.error('Please add your token to the bot!');
@@ -64,96 +81,91 @@ let alive = false;
  * @type {Array&lt;cmds>}
  */
 module.exports.cCommands = [];
+/**
+ * @type {Array&lt;prefix>}
+ */
+module.exports.prefixes = [];
+/**
+ * @type {Array&lt;nsfwModule>}
+ */
+module.exports.nsfw = [];
+
 const db = new Database('./mbot.db').db;
 
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
-
-db.serialize(() => {
-  db.run('CREATE TABLE if not exists users(id TEXT, points INTEGER, UNIQUE(id))');
-  db.run('CREATE TABLE if not exists welcomeMessage(id TEXT, use INTEGER, message TEXT, channel TEXT, UNIQUE(id))');
-  db.run('CREATE TABLE if not exists leaveMessage(id TEXT, use INTEGER, message TEXT, channel TEXT, UNIQUE(id))');
-  db.run('CREATE TABLE if not exists prefix(id TEXT, prefix TEXT, UNIQUE(id))');
-  db.run('CREATE TABLE if not exists serverInfo(id TEXT, use INTEGER, UNIQUE(id))');
-  db.run('CREATE TABLE if not exists commands(id TEXT, name TEXT, message TEXT)');
-  db.run('CREATE TABLE if not exists commandOptions(id TEXT, everyone INTEGER, use INTEGER, UNIQUE(id))');
-  db.run('CREATE TABLE if not exists roles(id TEXT, def TEXT, use INTEGER, UNIQUE(id))');
-  db.run('CREATE TABLE if not exists nsfw(id TEXT, use INTEGER, UNIQUE(id))');
-});
-
-/**
- * 
- * @param {Discord.Guild} guild 
- */
-function initDb(guild) {
-  if (guild.id === "264445053596991498") return;
-  db.serialize(() => {
-    db.run('INSERT OR IGNORE INTO welcomeMessage(id, use, message, channel) VALUES(?,?,?,?)',
-      guild.id.toString(),
-      0,
-      'User $user has joined the server!',
-      'general');
-    db.run('INSERT OR IGNORE INTO leaveMessage(id, use, message, channel) VALUES(?,?,?,?)',
-      guild.id.toString(),
-      0,
-      'User $user has left the server!',
-      'general');
-    db.run('INSERT OR IGNORE INTO prefix(id, prefix) VALUES(?,?)',
-      guild.id.toString(),
-      'm!');
-    db.run('INSERT OR IGNORE INTO serverInfo(id, use) VALUES(?,?)',
-      guild.id.toString(),
-      1);
-    db.run('INSERT OR IGNORE INTO commandOptions(id, everyone, use) VALUES(?,?,?)',
-      guild.id.toString(),
-      1,
-      1);
-    db.run('INSERT OR IGNORE INTO roles(id, def, use) VALUES(?,?,?)',
-      guild.id.toString(),
-      '_none',
-      1);
-    db.run('INSERT OR IGNORE INTO nsfw(id, use) VALUES(?,?)',
-      guild.id,
-      1);
-    for (let i = 0; i &lt; guild.members.array().length; i++) {
-      const guildMember = guild.members.array()[i];
-      db.run('INSERT OR IGNORE INTO users(id, points) VALUES(?,?)', guildMember.user.id.toString(), 100);
-    }
-  });
-}
-
+db.prepare('CREATE TABLE if not exists users(id TEXT, points INTEGER, UNIQUE(id))').run();
+db.prepare('CREATE TABLE if not exists welcomeMessage(id TEXT, use INTEGER, message TEXT, channel TEXT, UNIQUE(id))').run();
+db.prepare('CREATE TABLE if not exists leaveMessage(id TEXT, use INTEGER, message TEXT, channel TEXT, UNIQUE(id))').run();
+db.prepare('CREATE TABLE if not exists prefix(id TEXT, prefix TEXT, UNIQUE(id))').run();
+db.prepare('CREATE TABLE if not exists serverInfo(id TEXT, use INTEGER, UNIQUE(id))').run();
+db.prepare('CREATE TABLE if not exists commands(id TEXT, name TEXT, message TEXT)').run();
+db.prepare('CREATE TABLE if not exists commandOptions(id TEXT, everyone INTEGER, use INTEGER, UNIQUE(id))').run();
+db.prepare('CREATE TABLE if not exists roles(id TEXT, def TEXT, use INTEGER, UNIQUE(id))').run();
+db.prepare('CREATE TABLE if not exists nsfw(id TEXT, use INTEGER, UNIQUE(id))').run();
 event.on('ready', () => {
   for (const i in client.guilds.array()) {
     const guild = client.guilds.array()[i];
-    initDb(guild);
+    tls.initDb(guild);
   }
-  db.each('SELECT id id, name name, message message FROM commands', (err, row) => {
-    if (err) return console.log(err);
-    if (!row) {
-      return;
-    }
-    module.exports.cCommands.push({
+  tls._pointsClear24(client);
+  db.prepare('SELECT id id, name name, message message FROM commands').all().forEach(row => {
+    if (!row) return;
+    this.cCommands.push({
       "id": row.id,
       "name": row.name,
       "message": row.message,
     });
   });
+  db.prepare('SELECT prefix prefix, id id FROM prefix').all().forEach(row => {
+    if (!row) return;
+    this.prefixes.push({
+      "id": row.id,
+      "prefix": row.prefix,
+    });
+  });
+  db.prepare('SELECT id id, use use FROM nsfw').all().forEach(row => {
+    if (!row) return;
+    let use;
+    if (row.use === 1) use = true;
+    if (row.use === 0) use = false;
+    this.nsfw.push({
+      "id": row.id,
+      "use": use,
+    });
+  });
   event.on('timerFinished', (userId, timerId, timerName) => {
     Logger.debug(`Timer ${timerId} has finished.`);
-    client.fetchUser(userId).then(user => {
+    client.users.fetch(userId, false).then(user => {
       user.send(`Your timer '${timerName}' has finished!`);
     }).catch();
   });
+  db.close();
 });
 
 client.on('guildCreate', (guild) => {
-  initDb(guild);
+  tls.initDb(guild);
+  this.prefixes.push({
+    "id": guild.id,
+    "prefix": "m!",
+  });
+  this.nsfw.push({
+    "id": guild.id,
+    "use": true,
+  });
+});
+
+client.on('guildDelete', (guild) => {
+  tls.deleteGuild(guild).then(() => {
+    tls._pointsClear24(client);
+  });
 });
 
 client.on('guildMemberAdd', (guildMember) => {
   if (guildMember.guild.id === "264445053596991498") return;
-  new tools.Tools().getNLMessage('welcomeMessage', guildMember.guild.id, (use, msg, channel) => {
+  tls.getNLMessage('welcomeMessage', guildMember.guild.id, (use, msg, channel) => {
+    if (guildMember.user.bot) return;
     if (use === 1) {
       const chnl = guildMember.guild.channels.find(c => c.name === channel);
       if (!chnl) {
@@ -163,7 +175,7 @@ client.on('guildMemberAdd', (guildMember) => {
       }
     }
   });
-  new tools.Tools().getDefaultRole(guildMember.guild.id, (defaultRole, use) => {
+  tls.getDefaultRole(guildMember.guild.id, (defaultRole, use) => {
     if (use === 1) {
       const role = guildMember.guild.roles.find((r => r.name === defaultRole));
       if (!role) {
@@ -173,17 +185,13 @@ client.on('guildMemberAdd', (guildMember) => {
       }
     }
   });
-  db.serialize(() => {
-    db.run('INSERT OR IGNORE INTO users(id, points) VALUES(?,?)', guildMember.user.id.toString(), 100);
-    if (settings.debug) {
-      Logger.debug('New user found, registering them to the bot database with ID of ' + guildMember.user.id.toString());
-    }
-  });
+  tls.addMember(guildMember);
 });
 
 client.on('guildMemberRemove', (guildMember) => {
   if (guildMember.guild.id === "264445053596991498") return;
-  new tools.Tools().getNLMessage('leaveMessage', guildMember.guild.id.toString(), (use, msg, channel) => {
+  tls.getNLMessage('leaveMessage', guildMember.guild.id.toString(), (use, msg, channel) => {
+    if (guildMember.user.bot) return;
     if (use === 1) {
       const chnl = guildMember.guild.channels.find(c => c.name === channel);
       if (!chnl) {
@@ -198,13 +206,6 @@ client.on('guildMemberRemove', (guildMember) => {
 // actions
 client.on('ready', async () => {
   event.emit('ready');
-  db.serialize(() => {
-    let u, user;
-    for (u in client.users.array()) {
-      user = client.users.array()[u];
-      db.run('INSERT OR IGNORE INTO users(id, points) VALUES(?,?)', user.id.toString(), 100);
-    }
-  });
   Logger.info('mbot v' + pkg.version + " has been enabled.");
   if (settings.debug) {
     try {
@@ -215,22 +216,8 @@ client.on('ready', async () => {
     }
   }
   setInterval(() => {
-    db.serialize(() => {
-      db.each("SELECT points points, id id FROM users", (err, row) => {
-        if (err) {
-          console.log(err);
-        }
-        let u, user;
-        for (u in client.users.array()) {
-          user = client.users.array()[u];
-          if (row.id === user.id) {
-            if (user.bot) return;
-            return new tools.Tools().setPoints((row.points + 10), user.id);
-          }
-        }
-      });
-    });
-  }, (60000 * 10));
+    tls._points10(client);
+  }, (10 * 60000));
   setInterval(() => {
     seconds++;
     if (seconds >= 60) {
@@ -243,6 +230,9 @@ client.on('ready', async () => {
       }
     }
   }, 1000);
+  setInterval(() => {
+    tls._pointsClear24(client);
+  }, (1440 * 60000));
 });
 
 /**
@@ -262,11 +252,8 @@ const games = ['Minecraft', 'forsenPls', 'nymnBridge PewDiePie', 'wow',
 ];
 event.on('uptimeMinute', () => {
   const randomStatus = games[Math.floor(Math.random() * games.length)];
-  client.user.setPresence({
-    satus: 'online',
-    game: {
-      name: randomStatus,
-    },
+  client.user.setActivity(randomStatus, {
+    type: 'PLAYING',
   });
 });
 
@@ -274,14 +261,8 @@ event.on('filesLoaded', () => {
   Logger.file('Command files loaded!');
 });
 
-event.on('pointsUpdated', (amnt, id) => {
-  if (settings.debug) {
-    Logger.debug(`Set ${id}'s points to ${amnt}!`);
-  }
-});
-
 event.on('newCommand', (id, name, message) => {
-  module.exports.cCommands.push({
+  this.cCommands.push({
     "id": id,
     "name": name,
     "message": message,
@@ -290,9 +271,9 @@ event.on('newCommand', (id, name, message) => {
 });
 
 event.on('deleteCommand', (id, name) => {
-  const jsonCmd = module.exports.cCommands.find(c => c.name.toLowerCase() === name &amp;&amp; c.id === id);
-  const cmdIndex = module.exports.cCommands.indexOf(jsonCmd);
-  module.exports.cCommands.splice(cmdIndex, 1);
+  const jsonCmd = this.cCommands.find(c => c.name.toLowerCase() === name &amp;&amp; c.id === id);
+  const cmdIndex = this.cCommands.indexOf(jsonCmd);
+  this.cCommands.splice(cmdIndex, 1);
   Logger.debug(`Command ${name} was deleted from server ${id}.`);
 });
 
@@ -301,19 +282,14 @@ event.on('editCommand', (command, msg) => {
   Logger.debug(`Command ${command.name}'s message was updated to ${msg}`);
 });
 
-console.log(chalk.magenta(figlet.textSync('mbot', {
-  font: "Doom",
-  horizontalLayout: "full",
-})));
-
-commands.registerCommands(client, this, db);
+commands.registerCommands(client, this, tls.db);
 
 process.openStdin().on('data', (val) => {
   const command = val.toString().trim();
   switch (command.toLowerCase()) {
     case "stop":
       Logger.info('Stopping mbot...');
-      process.exit(0);
+      event.emit('stop', 0);
       break;
     case "version":
       require('fs').readFile('./version.txt', 'utf8', (err, data) => {
@@ -334,9 +310,51 @@ process.openStdin().on('data', (val) => {
   }
 });
 
-process.on('exit', (code) => {
-  Logger.info(`mbot v${pkg.version} has exited with code (${code})`);
+event.on('stop', (code) => {
+  exit().then(() => {
+    process.exit(code);
+  }).catch(err => {
+    Logger.error(err.stack);
+    process.exit(1);
+  });
 });
+
+event.on('prefixUpdate', (prefix, guildId) => {
+  const guildPrefix = this.prefixes.find(guild => guild.id === guildId);
+  guildPrefix.prefix = prefix;
+});
+
+event.on('nsfwUpdate', (use, guildId) => {
+  const guildUse = this.nsfw.find(guild => guild.id === guildId);
+  guildUse.use = use;
+});
+
+const errorStream = require('fs').createWriteStream('logs/errors.log');
+
+process.on('uncaughtException', (err) => {
+  errorStream.write(`[${this.getUptime()}]: ${err.stack}`);
+});
+
+process.on('unhandledRejection', (reason) => {
+  errorStream.write(`[${this.getUptime()}]: ${reason}\n`);
+  Logger.error(reason);
+});
+
+function exit() {
+  return new Promise((resolve, reject) => {
+    tls.close().then(() => {
+      try {
+        client.voice.connections.array().map(val => val.disconnect());
+        client.destroy();
+        return resolve();
+      } catch (err) {
+        return reject(err);
+      }
+    }).catch((err) => {
+      return reject(err);
+    });
+  });
+}
 
 setTimeout(() => {
   if (!alive) {
@@ -369,13 +387,13 @@ client.login(settings.token).then(() => {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="EmbedBuilder.html">EmbedBuilder</a></li><li><a href="Event.html">Event</a></li><li><a href="File.html">File</a></li><li><a href="Logger.html">Logger</a></li><li><a href="Tools.html">Tools</a></li></ul><h3>Global</h3><ul><li><a href="global.html#adminCommands">adminCommands</a></li><li><a href="global.html#cCommands">cCommands</a></li><li><a href="global.html#event">event</a></li><li><a href="global.html#getUptime">getUptime</a></li><li><a href="global.html#initDb">initDb</a></li><li><a href="global.html#registerCommands">registerCommands</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Event.html">Event</a></li><li><a href="File.html">File</a></li><li><a href="Logger.html">Logger</a></li><li><a href="Tools.html">Tools</a></li></ul><h3>Global</h3><ul><li><a href="global.html#adminCommands">adminCommands</a></li><li><a href="global.html#cCommands">cCommands</a></li><li><a href="global.html#event">event</a></li><li><a href="global.html#getUptime">getUptime</a></li><li><a href="global.html#nsfw">nsfw</a></li><li><a href="global.html#prefixes">prefixes</a></li><li><a href="global.html#registerCommands">registerCommands</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Tue Jun 11 2019 15:43:21 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Tue Jun 25 2019 00:28:25 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
