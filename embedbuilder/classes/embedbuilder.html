@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>EmbedBuilder | discord-embedbuilder</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for discord-embedbuilder">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -130,6 +130,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#cancel" class="tsd-kind-icon">cancel</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#changechannel" class="tsd-kind-icon">change<wbr>Channel</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#concatembeds" class="tsd-kind-icon">concat<wbr>Embeds</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#defaultreactions" class="tsd-kind-icon">default<wbr>Reactions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#deleteemoji" class="tsd-kind-icon">delete<wbr>Emoji</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="embedbuilder.html#emit" class="tsd-kind-icon">emit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="embedbuilder.html#eventnames" class="tsd-kind-icon">event<wbr>Names</a></li>
@@ -160,7 +161,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#settitle" class="tsd-kind-icon">set<wbr>Title</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#seturl" class="tsd-kind-icon">setURL</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#showpagenumber" class="tsd-kind-icon">show<wbr>Page<wbr>Number</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#splicefield" class="tsd-kind-icon">splice<wbr>Field</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#splicefields" class="tsd-kind-icon">splice<wbr>Fields</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#updatepage" class="tsd-kind-icon">update<wbr>Page</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="embedbuilder.html#usepages" class="tsd-kind-icon">use<wbr>Pages</a></li>
@@ -182,14 +182,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L55">embedbuilder.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L62">src/embedbuilder.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Builds an embed with a number of pages based on how many are in the MessageEmbed array given.</p>
-									<pre><code class="language-javascript"><span class="hljs-keyword">const</span> myEmbeds = [<span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">'This is'</span>, <span class="hljs-string">'a field!'</span>),
- <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">'This is'</span>, <span class="hljs-string">'another field!'</span>)];
+									<pre><code class="language-javascript"><span class="hljs-keyword">const</span> myEmbeds = [<span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">&#x27;This is&#x27;</span>, <span class="hljs-string">&#x27;a field!&#x27;</span>),
+ <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">&#x27;This is&#x27;</span>, <span class="hljs-string">&#x27;another field!&#x27;</span>)];
 embedBuilder
  .setChannel(message.channel)
  .setTime(<span class="hljs-number">30000</span>)
@@ -221,7 +221,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L553">embedbuilder.ts:553</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L591">src/embedbuilder.ts:591</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,7 +252,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L558">embedbuilder.ts:558</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L596">src/embedbuilder.ts:596</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -280,7 +280,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L548">embedbuilder.ts:548</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L586">src/embedbuilder.ts:586</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,7 +313,7 @@ embedBuilder
 					<div class="tsd-signature tsd-kind-icon">channel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TextChannel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">DMChannel</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L41">embedbuilder.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L41">src/embedbuilder.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -325,21 +325,26 @@ embedBuilder
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="embeds" class="tsd-anchor"></a>
 					<h3>embeds</h3>
-					<div class="tsd-signature tsd-kind-icon">embeds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">MessageEmbed</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">embeds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">MessageEmbed</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L42">embedbuilder.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L45">src/embedbuilder.ts:45</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>All embeds in the builder.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="defaultmaxlisteners" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Max<wbr>Listeners</h3>
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Max<wbr>Listeners<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from EventEmitter.defaultMaxListeners</p>
+						<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#defaultmaxlisteners">defaultMaxListeners</a></p>
 						<ul>
-							<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:30</li>
+							<li>Defined in node_modules/@types/node/events.d.ts:30</li>
 						</ul>
 					</aside>
 				</section>
@@ -356,7 +361,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L181">embedbuilder.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L188">src/embedbuilder.ts:188</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -378,13 +383,13 @@ embedBuilder
 					<a name="addemoji" class="tsd-anchor"></a>
 					<h3>add<wbr>Emoji</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Emoji<span class="tsd-signature-symbol">(</span>unicodeEmoji<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Emoji<span class="tsd-signature-symbol">(</span>unicodeEmoji<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>sent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span>, page<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, emoji<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L318">embedbuilder.ts:318</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L310">src/embedbuilder.ts:310</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -398,10 +403,10 @@ embedBuilder
 									<h5>unicodeEmoji: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>func: <span class="tsd-signature-type">function</span></h5>
+									<h5>func: <span class="tsd-signature-symbol">(</span>sent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span>, page<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, emoji<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span>, page<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, emoji<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -433,19 +438,19 @@ embedBuilder
 					<a name="addemojis" class="tsd-anchor"></a>
 					<h3>add<wbr>Emojis</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Emojis<span class="tsd-signature-symbol">(</span>emojis<span class="tsd-signature-symbol">: </span><a href="../interfaces/emojis.html" class="tsd-signature-type">Emojis</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Emojis<span class="tsd-signature-symbol">(</span>emojis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Emojis</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L386">embedbuilder.ts:386</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L378">src/embedbuilder.ts:378</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<pre><code class="language-javascript">builder.addEmojis({
- <span class="hljs-string">'❗'</span>: <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
+ <span class="hljs-string">&#x27;❗&#x27;</span>: <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
      builder.cancel();
      sent.delete();
      sent.channel.send(<span class="hljs-string">`A new message <span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
@@ -456,7 +461,7 @@ embedBuilder
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>emojis: <a href="../interfaces/emojis.html" class="tsd-signature-type">Emojis</a></h5>
+									<h5>emojis: <span class="tsd-signature-type">Emojis</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The emojis to push.</p>
 									</div>
@@ -476,7 +481,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L268">embedbuilder.ts:268</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L260">src/embedbuilder.ts:260</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -519,7 +524,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L279">embedbuilder.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L271">src/embedbuilder.ts:271</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -544,15 +549,15 @@ embedBuilder
 					<a name="addlistener" class="tsd-anchor"></a>
 					<h3>add<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.addListener</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#addlistener">addListener</a></p>
 								<p>Overrides EventEmitter.addListener</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:32</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:32</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -561,10 +566,10 @@ embedBuilder
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 								<li>
-									<h5>listener: <span class="tsd-signature-type">function</span></h5>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -596,7 +601,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L255">embedbuilder.ts:255</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L247">src/embedbuilder.ts:247</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -619,7 +624,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L430">embedbuilder.ts:430</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L432">src/embedbuilder.ts:432</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -645,10 +650,7 @@ embedBuilder
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/pageupdateoptions.html" class="tsd-signature-type">PageUpdateOptions</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">this</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -662,7 +664,7 @@ embedBuilder
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L449">embedbuilder.ts:449</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L452">src/embedbuilder.ts:452</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -689,13 +691,13 @@ embedBuilder
 					<a name="calculatepages" class="tsd-anchor"></a>
 					<h3>calculate<wbr>Pages</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Pages<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, dataPerPage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, insert<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Pages<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, dataPerPage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, insert<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>embed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MessageEmbed</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L89">embedbuilder.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L96">src/embedbuilder.ts:96</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -703,7 +705,7 @@ embedBuilder
 									<p>This calculates pages for the builder to work with.</p>
 									<pre><code class="language-javascript"><span class="hljs-comment">// This will generate a builder with a data length set to an array</span>
 <span class="hljs-comment">// It will have 10 fields per page, which will all be inline, containing username and points data.</span>
-embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (embed, i) =&gt; {
+embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, <span class="hljs-function">(<span class="hljs-params">embed, i</span>) =&gt;</span> {
  embed.addField(users[i].username, users[i].points, <span class="hljs-literal">true</span>);
 });</code></pre>
 								</div>
@@ -723,13 +725,13 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 									</div>
 								</li>
 								<li>
-									<h5>insert: <span class="tsd-signature-type">function</span></h5>
+									<h5>insert: <span class="tsd-signature-symbol">(</span>embed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MessageEmbed</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Gives you an embed and the current index.</p>
 									</div>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>embed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MessageEmbed</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -758,13 +760,13 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<a name="cancel" class="tsd-anchor"></a>
 					<h3>cancel</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L358">embedbuilder.ts:358</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L350">src/embedbuilder.ts:350</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -780,7 +782,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -797,7 +799,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L144">embedbuilder.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L151">src/embedbuilder.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -828,7 +830,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L154">embedbuilder.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L161">src/embedbuilder.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -850,6 +852,35 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="defaultreactions" class="tsd-anchor"></a>
+					<h3>default<wbr>Reactions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">default<wbr>Reactions<span class="tsd-signature-symbol">(</span>reactions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L391">src/embedbuilder.ts:391</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>reactions: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The reactions the bot will use. If this  method is not used in the builder, the bot will automatically add all reactions.
+										Any reactions left out will not be used.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="deleteemoji" class="tsd-anchor"></a>
 					<h3>delete<wbr>Emoji</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -859,7 +890,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L329">embedbuilder.ts:329</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L321">src/embedbuilder.ts:321</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -886,10 +917,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.emit</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#emit">emit</a></p>
 								<p>Overrides EventEmitter.emit</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:44</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:44</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -914,10 +945,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.eventNames</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#eventnames">eventNames</a></p>
 								<p>Overrides EventEmitter.eventNames</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:45</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:45</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -934,7 +965,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L190">embedbuilder.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L197">src/embedbuilder.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -958,10 +989,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.getMaxListeners</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#getmaxlisteners">getMaxListeners</a></p>
 								<p>Overrides EventEmitter.getMaxListeners</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:41</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:41</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -977,10 +1008,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.listenerCount</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#listenercount-1">listenerCount</a></p>
 								<p>Overrides EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:46</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:46</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1002,10 +1033,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.listeners</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#listeners">listeners</a></p>
 								<p>Overrides EventEmitter.listeners</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:42</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:42</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1022,15 +1053,15 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<a name="off" class="tsd-anchor"></a>
 					<h3>off</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.off</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#off">off</a></p>
 								<p>Overrides EventEmitter.off</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:38</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:38</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1039,10 +1070,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 								<li>
-									<h5>listener: <span class="tsd-signature-type">function</span></h5>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -1068,15 +1099,15 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<a name="on" class="tsd-anchor"></a>
 					<h3>on</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.on</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#on">on</a></p>
 								<p>Overrides EventEmitter.on</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:33</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:33</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1085,10 +1116,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 								<li>
-									<h5>listener: <span class="tsd-signature-type">function</span></h5>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -1114,15 +1145,15 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<a name="once" class="tsd-anchor"></a>
 					<h3>once</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.once</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#once">once</a></p>
 								<p>Overrides EventEmitter.once</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:34</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:34</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1131,10 +1162,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 								<li>
-									<h5>listener: <span class="tsd-signature-type">function</span></h5>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -1160,15 +1191,15 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<a name="prependlistener" class="tsd-anchor"></a>
 					<h3>prepend<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">prepend<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">prepend<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.prependListener</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#prependlistener">prependListener</a></p>
 								<p>Overrides EventEmitter.prependListener</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:35</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:35</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1177,10 +1208,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 								<li>
-									<h5>listener: <span class="tsd-signature-type">function</span></h5>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -1206,15 +1237,15 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<a name="prependoncelistener" class="tsd-anchor"></a>
 					<h3>prepend<wbr>Once<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">prepend<wbr>Once<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">prepend<wbr>Once<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.prependOnceListener</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#prependoncelistener">prependOnceListener</a></p>
 								<p>Overrides EventEmitter.prependOnceListener</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:36</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:36</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1223,10 +1254,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 								<li>
-									<h5>listener: <span class="tsd-signature-type">function</span></h5>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -1257,10 +1288,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.rawListeners</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#rawlisteners">rawListeners</a></p>
 								<p>Overrides EventEmitter.rawListeners</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:43</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:43</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1282,10 +1313,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.removeAllListeners</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#removealllisteners">removeAllListeners</a></p>
 								<p>Overrides EventEmitter.removeAllListeners</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:39</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:39</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1302,15 +1333,15 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<a name="removelistener" class="tsd-anchor"></a>
 					<h3>remove<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.removeListener</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#removelistener">removeListener</a></p>
 								<p>Overrides EventEmitter.removeListener</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:37</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:37</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1319,10 +1350,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 								<li>
-									<h5>listener: <span class="tsd-signature-type">function</span></h5>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
@@ -1354,7 +1385,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L293">embedbuilder.ts:293</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L285">src/embedbuilder.ts:285</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1383,7 +1414,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L336">embedbuilder.ts:336</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L328">src/embedbuilder.ts:328</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1406,7 +1437,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L209">embedbuilder.ts:209</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L216">src/embedbuilder.ts:216</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1429,7 +1460,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L163">embedbuilder.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L170">src/embedbuilder.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1457,7 +1488,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L202">embedbuilder.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L209">src/embedbuilder.ts:209</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1483,7 +1514,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L216">embedbuilder.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L223">src/embedbuilder.ts:223</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1505,10 +1536,10 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.setMaxListeners</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#setmaxlisteners">setMaxListeners</a></p>
 								<p>Overrides EventEmitter.setMaxListeners</p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:40</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:40</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1531,7 +1562,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L400">embedbuilder.ts:400</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L402">src/embedbuilder.ts:402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1568,7 +1599,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L134">embedbuilder.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L141">src/embedbuilder.ts:141</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1581,7 +1612,7 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 										<p>The format that the footer will use to display page number (if enabled).</p>
 										<pre><code class="language-javascript"><span class="hljs-comment">// %p = current page</span>
 <span class="hljs-comment">// %m = the amount of pages there are</span>
-embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
+embedBuilder.setPageFormat(<span class="hljs-string">&#x27;Page (%p/%m)&#x27;</span>);
 <span class="hljs-comment">// -&gt; Page (1/3)</span></code></pre>
 									</div>
 								</li>
@@ -1600,7 +1631,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L223">embedbuilder.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L230">src/embedbuilder.ts:230</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1623,7 +1654,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L172">embedbuilder.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L179">src/embedbuilder.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1651,7 +1682,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L300">embedbuilder.ts:300</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L292">src/embedbuilder.ts:292</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1674,7 +1705,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L195">embedbuilder.ts:195</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L202">src/embedbuilder.ts:202</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1697,7 +1728,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L286">embedbuilder.ts:286</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L278">src/embedbuilder.ts:278</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1720,7 +1751,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L368">embedbuilder.ts:368</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L360">src/embedbuilder.ts:360</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1734,45 +1765,16 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="splicefield" class="tsd-anchor"></a>
-					<h3>splice<wbr>Field</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">splice<wbr>Field<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, deleteCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, field<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">EmbedFieldData</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L238">embedbuilder.ts:238</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>deleteCount: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> field: <span class="tsd-signature-type">EmbedFieldData</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="splicefields" class="tsd-anchor"></a>
 					<h3>splice<wbr>Fields</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">splice<wbr>Fields<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, deleteCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, fields<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EmbedFieldData</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">splice<wbr>Fields<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, deleteCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, fields<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">EmbedFieldData</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L248">embedbuilder.ts:248</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L237">src/embedbuilder.ts:237</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1784,7 +1786,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 									<h5>deleteCount: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>fields: <span class="tsd-signature-type">EmbedFieldData</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fields: <span class="tsd-signature-type">EmbedFieldData</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -1801,7 +1803,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L119">embedbuilder.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L126">src/embedbuilder.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1838,7 +1840,7 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/484c01a/src/embedbuilder.ts#L107">embedbuilder.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c923ee0/src/embedbuilder.ts#L114">src/embedbuilder.ts:114</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1865,9 +1867,9 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.listenerCount</p>
+								<p>Inherited from <a href="pageupdater.html">PageUpdater</a>.<a href="pageupdater.html#listenercount-1">listenerCount</a></p>
 								<ul>
-									<li>Defined in /Users/Joshua/Documents/discord-embedbuilder/node_modules/@types/node/events.d.ts:29</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:29</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1968,6 +1970,9 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 								<a href="embedbuilder.html#concatembeds" class="tsd-kind-icon">concat<wbr>Embeds</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="embedbuilder.html#defaultreactions" class="tsd-kind-icon">default<wbr>Reactions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="embedbuilder.html#deleteemoji" class="tsd-kind-icon">delete<wbr>Emoji</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
@@ -2058,9 +2063,6 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 								<a href="embedbuilder.html#showpagenumber" class="tsd-kind-icon">show<wbr>Page<wbr>Number</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="embedbuilder.html#splicefield" class="tsd-kind-icon">splice<wbr>Field</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="embedbuilder.html#splicefields" class="tsd-kind-icon">splice<wbr>Fields</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -2079,12 +2081,6 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 					<li class=" tsd-kind-class">
 						<a href="pageupdater.html" class="tsd-kind-icon">Page<wbr>Updater</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-private tsd-is-not-exported">
-						<a href="../interfaces/emoji.html" class="tsd-kind-icon">Emoji</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-private tsd-is-not-exported">
-						<a href="../interfaces/emojis.html" class="tsd-kind-icon">Emojis</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/pageupdateoptions.html" class="tsd-kind-icon">Page<wbr>Update<wbr>Options</a>
 					</li>
@@ -2098,65 +2094,23 @@ embedBuilder.setPageFormat(<span class="hljs-string">'Page (%p/%m)'</span>);
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

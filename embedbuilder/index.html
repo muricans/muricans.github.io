@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>discord-embedbuilder</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for discord-embedbuilder">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> discord-embedbuilder</h1>
+			<h1>discord-embedbuilder</h1>
 		</div>
 	</div>
 </header>
@@ -62,16 +62,25 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="discord-embedbuilder">discord-embedbuilder</h1>
+				<a href="#discord-embedbuilder" id="discord-embedbuilder" style="color: inherit; text-decoration: none;">
+					<h1>discord-embedbuilder</h1>
+				</a>
 				<p><a href="https://david-dm.org/muricans/discord-embedbuilder"><img src="https://david-dm.org/muricans/discord-embedbuilder/status.svg" alt="dependencies Status"></a></p>
 				<p><a href="https://nodei.co/npm/discord-embedbuilder"><img src="https://nodei.co/npm/discord-embedbuilder.png?downloads=true" alt="NPM"></a></p>
 				<p>npm module to make creating embeds with mutliple pages a little bit easier</p>
 				<p><a href="http://github.muricans.xyz/embedbuilder">latest version documentation</a></p>
-				<h2 id="quick-install">Quick Install</h2>
-				<p>discord-embedbuilder v3.0.0</p>
+				<p><a href="http://github.muricans.xyz/embedbuilder/master">master documentation</a></p>
+				<a href="#quick-install" id="quick-install" style="color: inherit; text-decoration: none;">
+					<h2>Quick Install</h2>
+				</a>
+				<p>discord-embedbuilder v3.0.1 (current stable)</p>
 				<p><code>npm install discord-embedbuilder</code></p>
-				<p>discord-embedbuilder uses the latest stable version of discord.js (which as of 8/21/2020 is 12.3.1)</p>
-				<h2 id="methods">Methods</h2>
+				<p>discord-embedbuilder master repo (latest features &amp; fixes)</p>
+				<p><code>npm install muricans/discord-embedbuilder</code></p>
+				<p>discord-embedbuilder uses the latest stable version of discord.js (12.3.1)</p>
+				<a href="#methods" id="methods" style="color: inherit; text-decoration: none;">
+					<h2>Methods</h2>
+				</a>
 				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/stable/class/MessageEmbed">MessageEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
 				<p><code>usePages(use)</code></p>
 				<p>If this is set to false, the builder will not use the next, back, last, first, stop emotes.</p>
@@ -90,7 +99,7 @@
 				<p>Returns the current embeds that the builder has.</p>
 				<p><code>addEmoji(emoji, (sent, page, builder, emoji))</code></p>
 				<p>This will insert the provided emoji into the builder, and when it is clicked it will perform the action that is provided.</p>
-				<pre><code class="language-javascript">builder.addEmoji(<span class="hljs-string">'❗'</span>, (sent, page, emoji) =&gt; {
+				<pre><code class="language-javascript">builder.addEmoji(<span class="hljs-string">&#x27;❗&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
     sent.delete();
     builder.cancel();
     sent.channel.send(<span class="hljs-string">`A new message<span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
@@ -98,7 +107,7 @@
 				<p><code>addEmojis(emojis)</code></p>
 				<p>Add multiple emojis to do different actions.</p>
 				<pre><code class="language-javascript">builder.addEmojis([{
-    <span class="hljs-string">'❗'</span>: <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
+    <span class="hljs-string">&#x27;❗&#x27;</span>: <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
         builder.cancel();
         sent.delete();
         sent.channel.send(<span class="hljs-string">`A new message<span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
@@ -120,7 +129,7 @@
 This will generate a builder with a data length set to an array.
 It will have 10 fields per page, which will all be inline, containing username and points data.
 */</span>
-embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (embed, i) =&gt; {
+embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, <span class="hljs-function">(<span class="hljs-params">embed, i</span>) =&gt;</span> {
     embed.addField(users[i].username, users[i].points, <span class="hljs-literal">true</span>);
 });</code></pre>
 				<p><code>updatePage(page)</code></p>
@@ -132,7 +141,16 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 				<p><a href="https://muricans.github.io/embedbuilder/master/interfaces/pageupdateoptions.html">options</a></p>
 				<p>Create an updater to await responses from a user,
 				then set the builders current page to the page given.</p>
-				<h2 id="events">Events</h2>
+				<p><code>defaultReactions(reactions)</code></p>
+				<p>The reactions the bot will use. If this  method is not used in the builder, the bot will automatically add all reactions.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">/*
+* This builder will only use the stop and back emojis. 
+* Using this also allows you to rearrange the order in which the bot will react with the emojis.
+*/</span>
+embedBuilder.defaultReactions([<span class="hljs-string">&#x27;stop&#x27;</span>, <span class="hljs-string">&#x27;back&#x27;</span>]);</code></pre>
+				<a href="#events" id="events" style="color: inherit; text-decoration: none;">
+					<h2>Events</h2>
+				</a>
 				<p><a href="https://muricans.github.io/embedbuilder/master/classes/embedbuilder.html#create"><code>create</code></a></p>
 				<p>Emitted from build() when the first page has finished building.</p>
 				<p><a href="https://muricans.github.io/embedbuilder/master/classes/embedbuilder.html#stop"><code>stop</code></a></p>
@@ -140,31 +158,33 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 				<p><a href="https://muricans.github.io/embedbuilder/master/classes/embedbuilder.html#pageUpdate"><code>pageUpdate</code></a></p>
 				<p>Emitted from updatePage(). Sets the new page for the bot.</p>
 				<p>PageUpdater documentation can be found <a href="https://muricans.github.io/embedbuilder/master/classes/pageupdater.html">here</a>.</p>
-				<h2 id="example">Example</h2>
+				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+					<h2>Example</h2>
+				</a>
 				<p>First import discord-embedbuilder into your project.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> {
     EmbedBuilder,
- } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'discord-embedbuilder'</span>);</code></pre>
+ } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;discord-embedbuilder&#x27;</span>);</code></pre>
 				<p>Create a command or some way to get a channel to pass through the builder. If you are unsure on how to make a command, checking <a href="https://discordjs.guide/">this</a> out might be helpful.</p>
 				<p>Next make your embedbuilder.</p>
-				<pre><code class="language-javascript">client.on(<span class="hljs-string">'message'</span>, message =&gt; {
+				<pre><code class="language-javascript">client.on(<span class="hljs-string">&#x27;message&#x27;</span>, <span class="hljs-function"><span class="hljs-params">message</span> =&gt;</span> {
     <span class="hljs-keyword">const</span> builder = <span class="hljs-keyword">new</span> EmbedBuilder()
         .setChannel(message.channel)
         .setTime(<span class="hljs-number">60000</span>); <span class="hljs-comment">// Time is in milliseconds</span>
     <span class="hljs-keyword">const</span> myEmbedArray = [
-        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">'1st'</span>, <span class="hljs-string">'page'</span>),
-        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">'2nd'</span>, <span class="hljs-string">'page'</span>), 
-        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">'3rd'</span>, <span class="hljs-string">'page'</span>),
+        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">&#x27;1st&#x27;</span>, <span class="hljs-string">&#x27;page&#x27;</span>),
+        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">&#x27;2nd&#x27;</span>, <span class="hljs-string">&#x27;page&#x27;</span>), 
+        <span class="hljs-keyword">new</span> Discord.MessageEmbed().addField(<span class="hljs-string">&#x27;3rd&#x27;</span>, <span class="hljs-string">&#x27;page&#x27;</span>),
     ];
     builder
         .setEmbeds(myEmbedArray)
-        .setTitle(<span class="hljs-string">'This title stays the same on all pages!'</span>)
+        .setTitle(<span class="hljs-string">&#x27;This title stays the same on all pages!&#x27;</span>)
         .build(); <span class="hljs-comment">// No need to send a message, building it will automatically do it.</span>
 });</code></pre>
-				<p>Here&#39;s an example taken from my bot <a href="https://github.com/muricans/mbot/tree/v12-testing">mbot</a></p>
+				<p>Here&#39;s an example taken from my bot <a href="https://github.com/muricans/mbot/">mbot</a></p>
 				<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = {
-    <span class="hljs-attr">name</span>: <span class="hljs-string">'leaderboard'</span>,
-    <span class="hljs-attr">description</span>: <span class="hljs-string">'Get up to 50 users with the most points'</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;leaderboard&#x27;</span>,
+    <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;Get up to 50 users with the most points&#x27;</span>,
     <span class="hljs-keyword">async</span> execute(message, args, client) {
         <span class="hljs-keyword">const</span> leaders = <span class="hljs-keyword">await</span> leaderboard(message.channel, client);
         leaders.build();
@@ -185,11 +205,11 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
             });
         }
         users.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> (a.points &gt; b.points) ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
-        embeds.calculatePages(users.length, <span class="hljs-number">10</span>, (embed, i) =&gt; {
+        embeds.calculatePages(users.length, <span class="hljs-number">10</span>, <span class="hljs-function">(<span class="hljs-params">embed, i</span>) =&gt;</span> {
             embed.addField(<span class="hljs-string">`<span class="hljs-subst">${i + <span class="hljs-number">1</span>}</span>. <span class="hljs-subst">${users[i].username}</span>`</span>, users[i].points, <span class="hljs-literal">true</span>);
         });
         embeds
-            .setTitle(<span class="hljs-string">'Points Leaderboard'</span>)
+            .setTitle(<span class="hljs-string">&#x27;Points Leaderboard&#x27;</span>)
             .setTime(<span class="hljs-number">2</span> * <span class="hljs-number">60000</span>)
             .setChannel(channel);
         <span class="hljs-keyword">return</span> resolve(embeds);
@@ -213,12 +233,6 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 					<li class=" tsd-kind-class">
 						<a href="classes/pageupdater.html" class="tsd-kind-icon">Page<wbr>Updater</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-private tsd-is-not-exported">
-						<a href="interfaces/emoji.html" class="tsd-kind-icon">Emoji</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-private tsd-is-not-exported">
-						<a href="interfaces/emojis.html" class="tsd-kind-icon">Emojis</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/pageupdateoptions.html" class="tsd-kind-icon">Page<wbr>Update<wbr>Options</a>
 					</li>
@@ -232,65 +246,23 @@ embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, (
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
