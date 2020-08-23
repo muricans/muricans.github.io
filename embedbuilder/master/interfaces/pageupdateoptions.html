@@ -83,6 +83,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#cancelformat" class="tsd-kind-icon">cancel<wbr>Format</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#invalidpage" class="tsd-kind-icon">invalid<wbr>Page</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#singlelisten" class="tsd-kind-icon">single<wbr>Listen</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#success" class="tsd-kind-icon">success</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#time" class="tsd-kind-icon">time</a></li>
 							</ul>
@@ -98,7 +99,7 @@
 					<div class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/67a5b8a/src/reaction/pageupdater.ts#L13">src/reaction/pageupdater.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c8f4803/src/reaction/pageupdater.ts#L16">src/reaction/pageupdater.ts:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -113,7 +114,7 @@
 					<div class="tsd-signature tsd-kind-icon">cancel<wbr>Format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/67a5b8a/src/reaction/pageupdater.ts#L18">src/reaction/pageupdater.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c8f4803/src/reaction/pageupdater.ts#L21">src/reaction/pageupdater.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -129,7 +130,7 @@
 					<div class="tsd-signature tsd-kind-icon">invalid<wbr>Page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/67a5b8a/src/reaction/pageupdater.ts#L23">src/reaction/pageupdater.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c8f4803/src/reaction/pageupdater.ts#L30">src/reaction/pageupdater.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -145,7 +146,7 @@
 					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/67a5b8a/src/reaction/pageupdater.ts#L8">src/reaction/pageupdater.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c8f4803/src/reaction/pageupdater.ts#L8">src/reaction/pageupdater.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -155,12 +156,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="singlelisten" class="tsd-anchor"></a>
+					<h3>single<wbr>Listen</h3>
+					<div class="tsd-signature tsd-kind-icon">single<wbr>Listen<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c8f4803/src/reaction/pageupdater.ts#L25">src/reaction/pageupdater.ts:25</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Should it stop listening after it recieves the first message?</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="success" class="tsd-anchor"></a>
 					<h3>success</h3>
 					<div class="tsd-signature tsd-kind-icon">success<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/67a5b8a/src/reaction/pageupdater.ts#L28">src/reaction/pageupdater.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c8f4803/src/reaction/pageupdater.ts#L35">src/reaction/pageupdater.ts:35</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -176,9 +192,14 @@
 					<div class="tsd-signature tsd-kind-icon">time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/67a5b8a/src/reaction/pageupdater.ts#L9">src/reaction/pageupdater.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/c8f4803/src/reaction/pageupdater.ts#L12">src/reaction/pageupdater.ts:12</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>How long should it listen for messages?</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -214,6 +235,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="pageupdateoptions.html#message" class="tsd-kind-icon">message</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="pageupdateoptions.html#singlelisten" class="tsd-kind-icon">single<wbr>Listen</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="pageupdateoptions.html#success" class="tsd-kind-icon">success</a>
