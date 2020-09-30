@@ -97,6 +97,12 @@
 				<p>This will set how long the builder should listen for emotes. Make sure to set your time as milliseconds.</p>
 				<p><code>addTime(time)</code></p>
 				<p>Use after the embed has been built. Will increase the amount of time the collector is active before it stops.</p>
+				<p><code>resetTimer(time?)</code></p>
+				<p>Resets the timer to either the time already set, or a new time given.</p>
+				<p><code>addTimeOnPage(time)</code></p>
+				<p>Whenever the builder changes it&#39;s page, it will add specified amount of time (ms) to the current running timer.</p>
+				<p><code>resetTimerOnPage()</code></p>
+				<p>Whenever the builder changes it&#39;s page, it will reset the timer to the current set time.</p>
 				<p><code>getEmbeds()</code></p>
 				<p>Returns the current embeds that the builder has.</p>
 				<p><code>addEmoji(emoji, (sent, page, builder, emoji))</code></p>
@@ -184,39 +190,37 @@ embedBuilder.defaultReactions([<span class="hljs-string">&#x27;stop&#x27;</span>
         .build(); <span class="hljs-comment">// No need to send a message, building it will automatically do it.</span>
 });</code></pre>
 				<p>Here&#39;s an example taken from my bot <a href="https://github.com/muricans/mbot/">mbot</a></p>
-				<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = {
-    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;leaderboard&#x27;</span>,
-    <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;Get up to 50 users with the most points&#x27;</span>,
-    <span class="hljs-keyword">async</span> execute(message, args, client) {
-        <span class="hljs-keyword">const</span> leaders = <span class="hljs-keyword">await</span> leaderboard(message.channel, client);
-        leaders.build();
-    },
-};
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> rolebot = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../rolebot&#x27;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);
+<span class="hljs-keyword">const</span> {
+    EmbedBuilder,
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;discord-embedbuilder&#x27;</span>);
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">leaderboard</span>(<span class="hljs-params">channel, client</span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-keyword">async</span> (resolve) =&gt; {
-        <span class="hljs-keyword">const</span> embeds = <span class="hljs-keyword">new</span> EmbedBuilder();
-        <span class="hljs-keyword">const</span> users = [];
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; tools.users(client).length; i++) {
-            <span class="hljs-keyword">const</span> user = tools.users(client)[i];
-            <span class="hljs-keyword">const</span> points = <span class="hljs-keyword">await</span> tools.getPoints(user.id);
-            users.push({
-                <span class="hljs-attr">id</span>: user.id,
-                <span class="hljs-attr">username</span>: user.username,
-                <span class="hljs-attr">points</span>: points,
-            });
+<span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;list&#x27;</span>,
+    <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;Refreshes and lists all currently active role react messages.&#x27;</span>,
+    <span class="hljs-attr">permissions</span>: [<span class="hljs-string">&#x27;MANAGE_GUILD&#x27;</span>],
+    <span class="hljs-keyword">async</span> execute(message) {
+        rolebot.refreshActiveMessagesFor(message.guild.id);
+        <span class="hljs-keyword">const</span> messages = <span class="hljs-built_in">JSON</span>.parse(fs.readFileSync(<span class="hljs-string">&#x27;./messages.json&#x27;</span>, <span class="hljs-string">&#x27;utf-8&#x27;</span>));
+        <span class="hljs-keyword">const</span> list = messages.ids.filter(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> v.guildId === message.guild.id);
+        <span class="hljs-keyword">if</span> (list.length &gt; <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">const</span> builder = <span class="hljs-keyword">new</span> EmbedBuilder(message.channel);
+            <span class="hljs-keyword">const</span> guild = <span class="hljs-keyword">await</span> message.guild.fetch();
+            builder.calculatePages(list.length, <span class="hljs-number">8</span>, <span class="hljs-keyword">async</span> (embed, i) =&gt; {
+                    <span class="hljs-keyword">const</span> channelName = guild.channels.cache.get(list[i].channelId);
+                    <span class="hljs-keyword">const</span> roleName = guild.roles.cache.get(list[i].roleId);
+                    embed.addField(<span class="hljs-string">&quot;Message ID&quot;</span>, list[i].messageId, <span class="hljs-literal">true</span>);
+                    embed.addField(<span class="hljs-string">&quot;Channel&quot;</span>, <span class="hljs-string">`<span class="hljs-subst">${channelName}</span>`</span>, <span class="hljs-literal">true</span>);
+                    embed.addField(<span class="hljs-string">&quot;Role&quot;</span>, <span class="hljs-string">`<span class="hljs-subst">${roleName}</span>`</span>, <span class="hljs-literal">true</span>);
+                })
+                .setTitle(<span class="hljs-string">&quot;List of All Active Messages&quot;</span>)
+                .build();
+        } <span class="hljs-keyword">else</span> {
+            message.channel.send(<span class="hljs-string">`<span class="hljs-subst">${message.author}</span> No messages are currently registered in this guild!`</span>);
         }
-        users.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> (a.points &gt; b.points) ? <span class="hljs-number">-1</span> : <span class="hljs-number">1</span>);
-        embeds.calculatePages(users.length, <span class="hljs-number">10</span>, <span class="hljs-function">(<span class="hljs-params">embed, i</span>) =&gt;</span> {
-            embed.addField(<span class="hljs-string">`<span class="hljs-subst">${i + <span class="hljs-number">1</span>}</span>. <span class="hljs-subst">${users[i].username}</span>`</span>, users[i].points, <span class="hljs-literal">true</span>);
-        });
-        embeds
-            .setTitle(<span class="hljs-string">&#x27;Points Leaderboard&#x27;</span>)
-            .setTime(<span class="hljs-number">2</span> * <span class="hljs-number">60000</span>)
-            .setChannel(channel);
-        <span class="hljs-keyword">return</span> resolve(embeds);
-    });
-}</code></pre>
+    },
+};</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
