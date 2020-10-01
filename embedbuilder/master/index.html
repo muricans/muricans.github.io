@@ -93,6 +93,8 @@
 				<p>Adds a MessageEmbed to the array of embeds.</p>
 				<p><code>concatEmbeds(embeds)</code></p>
 				<p>Puts the array of embeds given at the end of the current embeds array.</p>
+				<p><code>setEndColor(color)</code></p>
+				<p>When the collection has ended, and no other custom color is being used, this will be the color the embed is set to. Default is 0xE21717</p>
 				<p><code>setTime(time)</code></p>
 				<p>This will set how long the builder should listen for emotes. Make sure to set your time as milliseconds.</p>
 				<p><code>addTime(time)</code></p>
@@ -159,12 +161,17 @@ embedBuilder.defaultReactions([<span class="hljs-string">&#x27;stop&#x27;</span>
 				<a href="#events" id="events" style="color: inherit; text-decoration: none;">
 					<h2>Events</h2>
 				</a>
-				<p><a href="http://github.muricans.xyz/embedbuilder/master/classes/embedbuilder.html#create"><code>create</code></a></p>
+				<p><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#create"><code>create</code></a></p>
 				<p>Emitted from build() when the first page has finished building.</p>
-				<p><a href="http://github.muricans.xyz/embedbuilder/master/classes/embedbuilder.html#stop"><code>stop</code></a></p>
+				<p><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#stop"><code>stop</code></a></p>
 				<p>Emitted from build() when the timer has run out, or the collector is canceled in any way.</p>
-				<p><a href="http://github.muricans.xyz/embedbuilder/master/classes/embedbuilder.html#pageUpdate"><code>pageUpdate</code></a></p>
-				<p>Emitted from updatePage(). Sets the new page for the bot.</p>
+				<p><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#pageUpdate"><code>pageUpdate</code></a></p>
+				<p>Emitted from from build() when the builder has changed pages. Sets the new page for the bot.</p>
+				<p><a href="http://github.muricans.xyz/embedbuilder/master/classes/embedbuilder.html#preSend"><code>preSend (master only)</code></a></p>
+				<p>Emitted from build() before the first embed page has been sent in Discord.</p>
+				<a href="#pageupdater" id="pageupdater" style="color: inherit; text-decoration: none;">
+					<h2>PageUpdater</h2>
+				</a>
 				<p>PageUpdater documentation can be found <a href="http://github.muricans.xyz/embedbuilder/master/classes/pageupdater.html">here</a>.</p>
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h2>Example</h2>
@@ -189,7 +196,7 @@ embedBuilder.defaultReactions([<span class="hljs-string">&#x27;stop&#x27;</span>
         .setTitle(<span class="hljs-string">&#x27;This title stays the same on all pages!&#x27;</span>)
         .build(); <span class="hljs-comment">// No need to send a message, building it will automatically do it.</span>
 });</code></pre>
-				<p>Here&#39;s an example taken from my bot <a href="https://github.com/muricans/mbot/">mbot</a></p>
+				<p>Here&#39;s an example taken from my bot <a href="https://github.com/muricans/rolesbot/">rolesbot</a></p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> rolebot = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../rolebot&#x27;</span>);
 <span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);
 <span class="hljs-keyword">const</span> {
