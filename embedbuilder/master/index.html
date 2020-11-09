@@ -82,39 +82,75 @@
 					<h2>Methods</h2>
 				</a>
 				<p>All methods that have the same names as the ones from <a href="https://discord.js.org/#/docs/main/stable/class/MessageEmbed">MessageEmbed</a> do the same actions as those, but applies it to all of the pages, which should override their values.</p>
-				<p><code>usePages(use)</code></p>
+				<a href="#usepagesuse" id="usepagesuse" style="color: inherit; text-decoration: none;">
+					<h3><code>usePages(use)</code></h3>
+				</a>
 				<p>If this is set to false, the builder will not use the next, back, last, first, stop emotes.</p>
-				<p><code>changeChannel(channel)</code></p>
+				<hr/>
+				<a href="#changechannelchannel" id="changechannelchannel" style="color: inherit; text-decoration: none;">
+					<h3><code>changeChannel(channel)</code></h3>
+				</a>
 				<p>Change the current channel.</p>
 				<p><strong><span style="color:red">Warning:</span></strong> This should not be used to set the channel. You can set the channel in the constructor.</p>
-				<p><code>setEmbeds(embeds)</code></p>
+				<hr/>
+				<a href="#setembedsembeds" id="setembedsembeds" style="color: inherit; text-decoration: none;">
+					<h3><code>setEmbeds(embeds)</code></h3>
+				</a>
 				<p>The array of MessageEmbeds put here will be the ones that are used to make the pages. You can also add embeds using addEmbed.</p>
-				<p><code>addEmbed(embed)</code></p>
+				<hr/>
+				<a href="#addembedembed" id="addembedembed" style="color: inherit; text-decoration: none;">
+					<h3><code>addEmbed(embed)</code></h3>
+				</a>
 				<p>Adds a MessageEmbed to the array of embeds.</p>
-				<p><code>concatEmbeds(embeds)</code></p>
+				<hr/>
+				<a href="#concatembedsembeds" id="concatembedsembeds" style="color: inherit; text-decoration: none;">
+					<h3><code>concatEmbeds(embeds)</code></h3>
+				</a>
 				<p>Puts the array of embeds given at the end of the current embeds array.</p>
-				<p><code>setEndColor(color)</code></p>
+				<hr/>
+				<a href="#setendcolorcolor" id="setendcolorcolor" style="color: inherit; text-decoration: none;">
+					<h3><code>setEndColor(color)</code></h3>
+				</a>
 				<p>When the collection has ended, and no other custom color is being used, this will be the color the embed is set to. Default is 0xE21717</p>
-				<p><code>setTime(time)</code></p>
+				<hr/>
+				<a href="#settimetime" id="settimetime" style="color: inherit; text-decoration: none;">
+					<h3><code>setTime(time)</code></h3>
+				</a>
 				<p>This will set how long the builder should listen for emotes. Make sure to set your time as milliseconds.</p>
-				<p><code>addTime(time)</code></p>
+				<hr/>
+				<a href="#addtimetime" id="addtimetime" style="color: inherit; text-decoration: none;">
+					<h3><code>addTime(time)</code></h3>
+				</a>
 				<p>Use after the embed has been built. Will increase the amount of time the collector is active before it stops.</p>
-				<p><code>resetTimer(time?)</code></p>
+				<hr/>
+				<a href="#resettimertime" id="resettimertime" style="color: inherit; text-decoration: none;">
+					<h3><code>resetTimer(time?)</code></h3>
+				</a>
 				<p>Resets the timer to either the time already set, or a new time given.</p>
-				<p><code>addTimeOnPage(time)</code></p>
+				<hr/>
+				<a href="#addtimeonpagetime" id="addtimeonpagetime" style="color: inherit; text-decoration: none;">
+					<h3><code>addTimeOnPage(time)</code></h3>
+				</a>
 				<p>Whenever the builder changes it&#39;s page, it will add specified amount of time (ms) to the current running timer.</p>
-				<p><code>resetTimerOnPage()</code></p>
+				<hr/>
+				<a href="#resettimeronpage" id="resettimeronpage" style="color: inherit; text-decoration: none;">
+					<h3><code>resetTimerOnPage()</code></h3>
+				</a>
 				<p>Whenever the builder changes it&#39;s page, it will reset the timer to the current set time.</p>
-				<p><code>getEmbeds()</code></p>
-				<p>Returns the current embeds that the builder has.</p>
-				<p><code>addEmoji(emoji, (sent, page, builder, emoji))</code></p>
+				<hr/>
+				<a href="#addemojiemoji-sent-page-builder-emoji" id="addemojiemoji-sent-page-builder-emoji" style="color: inherit; text-decoration: none;">
+					<h3><code>addEmoji(emoji, (sent, page, builder, emoji))</code></h3>
+				</a>
 				<p>This will insert the provided emoji into the builder, and when it is clicked it will perform the action that is provided.</p>
 				<pre><code class="language-javascript">builder.addEmoji(<span class="hljs-string">&#x27;❗&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
     sent.delete();
     builder.cancel();
     sent.channel.send(<span class="hljs-string">`A new message<span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
 });</code></pre>
-				<p><code>addEmojis(emojis)</code></p>
+				<hr/>
+				<a href="#addemojisemojis" id="addemojisemojis" style="color: inherit; text-decoration: none;">
+					<h3><code>addEmojis(emojis)</code></h3>
+				</a>
 				<p>Add multiple emojis to do different actions.</p>
 				<pre><code class="language-javascript">builder.addEmojis([{
     <span class="hljs-string">&#x27;❗&#x27;</span>: <span class="hljs-function">(<span class="hljs-params">sent, page, emoji</span>) =&gt;</span> {
@@ -123,17 +159,32 @@
         sent.channel.send(<span class="hljs-string">`A new message<span class="hljs-subst">${emoji}</span>\nThe page you were on before was <span class="hljs-subst">${page}</span>`</span>);
     },
 }]);</code></pre>
-				<p><code>deleteEmoji(emoji)</code></p>
+				<hr/>
+				<a href="#deleteemojiemoji" id="deleteemojiemoji" style="color: inherit; text-decoration: none;">
+					<h3><code>deleteEmoji(emoji)</code></h3>
+				</a>
 				<p>Deletes an emoji from the list of emojis.</p>
-				<p><code>cancel(callback?)</code></p>
+				<hr/>
+				<a href="#cancelcallback" id="cancelcallback" style="color: inherit; text-decoration: none;">
+					<h3><code>cancel(callback?)</code></h3>
+				</a>
 				<p>Cancels the builder before the timer ends.</p>
 				<p>If a callback is provided, it will execute after the builder has canceled.</p>
-				<p><code>showPageNumber(use)</code></p>
+				<hr/>
+				<a href="#showpagenumberuse" id="showpagenumberuse" style="color: inherit; text-decoration: none;">
+					<h3><code>showPageNumber(use)</code></h3>
+				</a>
 				<p>If set to true (by default it is true), it will show the current page on the footer of the embed. (Page x/y)</p>
-				<p><code>setPageFormat(format)</code></p>
+				<hr/>
+				<a href="#setpageformatformat" id="setpageformatformat" style="color: inherit; text-decoration: none;">
+					<h3><code>setPageFormat(format)</code></h3>
+				</a>
 				<p>If showing page numbers, this is the format that will be used.</p>
 				<p>By default format is %p/%m which converts to current/max.</p>
-				<p><code>calculatePages(data, dataPerPage, insert)</code></p>
+				<hr/>
+				<a href="#calculatepagesdata-dataperpage-insert" id="calculatepagesdata-dataperpage-insert" style="color: inherit; text-decoration: none;">
+					<h3><code>calculatePages(data, dataPerPage, insert)</code></h3>
+				</a>
 				<p>This calculates pages for the builder to work with.</p>
 				<pre><code class="language-javascript"><span class="hljs-comment">/*
 This will generate a builder with a data length set to an array.
@@ -142,32 +193,63 @@ It will have 10 fields per page, which will all be inline, containing username a
 embedBuilder.calculatePages(users.length, <span class="hljs-number">10</span>, <span class="hljs-function">(<span class="hljs-params">embed, i</span>) =&gt;</span> {
     embed.addField(users[i].username, users[i].points, <span class="hljs-literal">true</span>);
 });</code></pre>
-				<p><code>updatePage(page)</code></p>
+				<hr/>
+				<a href="#calculatepagesasyncdata-dataperpage-insert" id="calculatepagesasyncdata-dataperpage-insert" style="color: inherit; text-decoration: none;">
+					<h3><code>calculatePagesAsync(data, dataPerPage, insert)</code></h3>
+				</a>
+				<p>Async version of calculatePages</p>
+				<p>Makes the page calculator wait for operations to finish.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">await</span> embedBuilder.calculatePagesAsync(users.length, <span class="hljs-number">10</span>, <span class="hljs-keyword">async</span> (embed, i) =&gt; {
+    <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">await</span> getSomeUser(users[i]);
+    embed.addField(user.username, user.points, <span class="hljs-literal">true</span>);
+});</code></pre>
+				<hr/>
+				<a href="#updatepagepage" id="updatepagepage" style="color: inherit; text-decoration: none;">
+					<h3><code>updatePage(page)</code></h3>
+				</a>
 				<p>Updates the current page to the one set there. This checks if the page is valid itself. Make sure the first page of the builder has already gone through before using this.</p>
-				<p><code>setPageEmoji(emoji, newEmoji)</code></p>
+				<hr/>
+				<a href="#setpageemojiemoji-newemoji" id="setpageemojiemoji-newemoji" style="color: inherit; text-decoration: none;">
+					<h3><code>setPageEmoji(emoji, newEmoji)</code></h3>
+				</a>
 				<p>Replaces current type of emoji given with the new emoji provided.</p>
 				<p>Types allowed: back, first, stop, last, next</p>
-				<p><code>awaitPageUpdate(user, options)</code></p>
+				<hr/>
+				<a href="#awaitpageupdateuser-options" id="awaitpageupdateuser-options" style="color: inherit; text-decoration: none;">
+					<h3><code>awaitPageUpdate(user, options)</code></h3>
+				</a>
 				<p><a href="http://github.muricans.xyz/embedbuilder/master/interfaces/pageupdateoptions.html">options</a></p>
 				<p>Create an updater to await responses from a user,
 				then set the builders current page to the page given.</p>
-				<p><code>defaultReactions(reactions)</code></p>
+				<hr/>
+				<a href="#defaultreactionsreactions" id="defaultreactionsreactions" style="color: inherit; text-decoration: none;">
+					<h3><code>defaultReactions(reactions)</code></h3>
+				</a>
 				<p>The reactions the bot will use. If this  method is not used in the builder, the bot will automatically add all reactions.</p>
 				<pre><code class="language-javascript"><span class="hljs-comment">/*
 * This builder will only use the stop and back emojis. 
 * Using this also allows you to rearrange the order in which the bot will react with the emojis.
 */</span>
 embedBuilder.defaultReactions([<span class="hljs-string">&#x27;stop&#x27;</span>, <span class="hljs-string">&#x27;back&#x27;</span>]);</code></pre>
+				<hr/>
 				<a href="#events" id="events" style="color: inherit; text-decoration: none;">
 					<h2>Events</h2>
 				</a>
-				<p><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#create"><code>create</code></a></p>
+				<a href="#create" id="create" style="color: inherit; text-decoration: none;">
+					<h3><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#create"><code>create</code></a></h3>
+				</a>
 				<p>Emitted from build() when the first page has finished building.</p>
-				<p><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#stop"><code>stop</code></a></p>
+				<a href="#stop" id="stop" style="color: inherit; text-decoration: none;">
+					<h3><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#stop"><code>stop</code></a></h3>
+				</a>
 				<p>Emitted from build() when the timer has run out, or the collector is canceled in any way.</p>
-				<p><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#pageupdate"><code>pageUpdate</code></a></p>
+				<a href="#pageupdate" id="pageupdate" style="color: inherit; text-decoration: none;">
+					<h3><a href="http://github.muricans.xyz/embedbuilder/classes/embedbuilder.html#pageupdate"><code>pageUpdate</code></a></h3>
+				</a>
 				<p>Emitted from from build() when the builder has changed pages. Sets the new page for the bot.</p>
-				<p><a href="http://github.muricans.xyz/embedbuilder/master/classes/embedbuilder.html#presend"><code>preSend (master only)</code></a></p>
+				<a href="#presend-master-only" id="presend-master-only" style="color: inherit; text-decoration: none;">
+					<h3><a href="http://github.muricans.xyz/embedbuilder/master/classes/embedbuilder.html#presend"><code>preSend (master only)</code></a></h3>
+				</a>
 				<p>Emitted from build() before the first embed page has been sent in Discord.</p>
 				<a href="#pageupdater" id="pageupdater" style="color: inherit; text-decoration: none;">
 					<h2>PageUpdater</h2>
