@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for discord-embedbuilder">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -38,8 +39,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,10 +52,10 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../globals.html">Globals</a>
+					<a href="../modules.html">discord-embedbuilder</a>
 				</li>
 				<li>
-					<a href="pageupdateoptions.html">PageUpdateOptions</a>
+					<a href="PageUpdateOptions.html">PageUpdateOptions</a>
 				</li>
 			</ul>
 			<h1>Interface PageUpdateOptions</h1>
@@ -79,13 +80,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#cancel" class="tsd-kind-icon">cancel</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#cancelformat" class="tsd-kind-icon">cancel<wbr>Format</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#invalidpage" class="tsd-kind-icon">invalid<wbr>Page</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#singlelisten" class="tsd-kind-icon">single<wbr>Listen</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#success" class="tsd-kind-icon">success</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pageupdateoptions.html#time" class="tsd-kind-icon">time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="PageUpdateOptions.html#cancel" class="tsd-kind-icon">cancel</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="PageUpdateOptions.html#cancelFormat" class="tsd-kind-icon">cancel<wbr>Format</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="PageUpdateOptions.html#invalidPage" class="tsd-kind-icon">invalid<wbr>Page</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="PageUpdateOptions.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="PageUpdateOptions.html#singleListen" class="tsd-kind-icon">single<wbr>Listen</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="PageUpdateOptions.html#success" class="tsd-kind-icon">success</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="PageUpdateOptions.html#time" class="tsd-kind-icon">time</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,7 +100,7 @@
 					<div class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/429c6b7/src/reaction/pageupdater.ts#L16">src/reaction/pageupdater.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/8133b12/src/reaction/pageupdater.ts#L16">src/reaction/pageupdater.ts:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -109,12 +110,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="cancelformat" class="tsd-anchor"></a>
+					<a name="cancelFormat" class="tsd-anchor"></a>
 					<h3>cancel<wbr>Format</h3>
 					<div class="tsd-signature tsd-kind-icon">cancel<wbr>Format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/429c6b7/src/reaction/pageupdater.ts#L21">src/reaction/pageupdater.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/8133b12/src/reaction/pageupdater.ts#L21">src/reaction/pageupdater.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -125,12 +126,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="invalidpage" class="tsd-anchor"></a>
+					<a name="invalidPage" class="tsd-anchor"></a>
 					<h3>invalid<wbr>Page</h3>
 					<div class="tsd-signature tsd-kind-icon">invalid<wbr>Page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/429c6b7/src/reaction/pageupdater.ts#L30">src/reaction/pageupdater.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/8133b12/src/reaction/pageupdater.ts#L30">src/reaction/pageupdater.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -146,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/429c6b7/src/reaction/pageupdater.ts#L8">src/reaction/pageupdater.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/8133b12/src/reaction/pageupdater.ts#L8">src/reaction/pageupdater.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -156,12 +157,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="singlelisten" class="tsd-anchor"></a>
+					<a name="singleListen" class="tsd-anchor"></a>
 					<h3>single<wbr>Listen</h3>
 					<div class="tsd-signature tsd-kind-icon">single<wbr>Listen<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/429c6b7/src/reaction/pageupdater.ts#L25">src/reaction/pageupdater.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/8133b12/src/reaction/pageupdater.ts#L25">src/reaction/pageupdater.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -176,7 +177,7 @@
 					<div class="tsd-signature tsd-kind-icon">success<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/429c6b7/src/reaction/pageupdater.ts#L35">src/reaction/pageupdater.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/8133b12/src/reaction/pageupdater.ts#L35">src/reaction/pageupdater.ts:35</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -192,7 +193,7 @@
 					<div class="tsd-signature tsd-kind-icon">time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/429c6b7/src/reaction/pageupdater.ts#L12">src/reaction/pageupdater.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/muricans/discord-embedbuilder/blob/8133b12/src/reaction/pageupdater.ts#L12">src/reaction/pageupdater.ts:12</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -206,44 +207,44 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="../classes/embedbuilder.html" class="tsd-kind-icon">Embed<wbr>Builder</a>
+						<a href="../classes/EmbedBuilder.html" class="tsd-kind-icon">Embed<wbr>Builder</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="../classes/pageupdater.html" class="tsd-kind-icon">Page<wbr>Updater</a>
+						<a href="../classes/PageUpdater.html" class="tsd-kind-icon">Page<wbr>Updater</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="pageupdateoptions.html" class="tsd-kind-icon">Page<wbr>Update<wbr>Options</a>
+						<a href="PageUpdateOptions.html" class="tsd-kind-icon">Page<wbr>Update<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pageupdateoptions.html#cancel" class="tsd-kind-icon">cancel</a>
+								<a href="PageUpdateOptions.html#cancel" class="tsd-kind-icon">cancel</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pageupdateoptions.html#cancelformat" class="tsd-kind-icon">cancel<wbr>Format</a>
+								<a href="PageUpdateOptions.html#cancelFormat" class="tsd-kind-icon">cancel<wbr>Format</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pageupdateoptions.html#invalidpage" class="tsd-kind-icon">invalid<wbr>Page</a>
+								<a href="PageUpdateOptions.html#invalidPage" class="tsd-kind-icon">invalid<wbr>Page</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pageupdateoptions.html#message" class="tsd-kind-icon">message</a>
+								<a href="PageUpdateOptions.html#message" class="tsd-kind-icon">message</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pageupdateoptions.html#singlelisten" class="tsd-kind-icon">single<wbr>Listen</a>
+								<a href="PageUpdateOptions.html#singleListen" class="tsd-kind-icon">single<wbr>Listen</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pageupdateoptions.html#success" class="tsd-kind-icon">success</a>
+								<a href="PageUpdateOptions.html#success" class="tsd-kind-icon">success</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pageupdateoptions.html#time" class="tsd-kind-icon">time</a>
+								<a href="PageUpdateOptions.html#time" class="tsd-kind-icon">time</a>
 							</li>
 						</ul>
 					</li>
@@ -267,7 +268,7 @@
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 			</ul>
 		</div>
 	</div>
